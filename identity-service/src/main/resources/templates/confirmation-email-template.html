@@ -1,0 +1,47 @@
+<!--This is template for email. In order for the styling to be applied it should be used inline in html tags,
+otherwise it will not work-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Confirmation</title>
+</head>
+
+<body style="display: flex; justify-content: center; align-items: center; height: 30vh;">
+<div class="email-container" style="max-width: 600px; padding: 20px; background-color: #fff; border: 1px solid #e0e0e0; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); text-align: center;">
+    <table role="presentation" style="width: 100%;">
+        <!-- ... Header ... -->
+    </table>
+
+    <!-- Add your email content here -->
+    <table role="presentation">
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <p>
+                    Hi <span th:text="${name}" style="margin: 1em 0;"></span>
+                </p>
+                <p>
+                    Thank you for registering. Please click on the below link to activate your account:
+                </p>
+                <blockquote style="text-align: center;">
+                    <p>
+                        <a th:href="${link}" style="display: inline-block; text-decoration: none; background-color: #007bff; color: #ffffff; padding: 10px 20px; border-radius: 5px;">Activate Now</a>
+                    </p>
+                </blockquote>
+                Link will expire in 15 minutes.
+                <p>See you soon</p>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

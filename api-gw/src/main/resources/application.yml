@@ -1,0 +1,32 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        register: true
+        prefer-ip-address: true
+        service-name: api-gateway
+        instance-id: ${spring.application.name}:${server.port}
+    gateway:
+      routes:
+        - id: identity-service-route
+          uri: lb://identity-service  # Assuming identity-service is the service name in Consul
+          predicates:
+            - Path=/api/auth/**
+#        Here add the routes which will be accessible from api gateway
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+  endpoint:
+    gateway:
+      enabled: true

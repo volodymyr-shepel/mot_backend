@@ -1,0 +1,5 @@
+UserSerive postgre: 5440:5432
+zipkin: 9411:9411
+rabbitmq:
+      - "5672:5672"
+      - "15672:15672"

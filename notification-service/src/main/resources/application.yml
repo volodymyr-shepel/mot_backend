@@ -1,0 +1,41 @@
+server:
+  port: 8082
+
+app:
+  email-from: ${EMAIL_FROM}
+  email-from-name: ${EMAIL_FROM_NAME}
+
+spring:
+  application:
+    name : notification-service
+
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        register: true
+        prefer-ip-address: true
+        service-name: notification-service
+        instance-id: ${spring.application.name}:${server.port}
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls.enable: true
+
+
+rabbitmq:
+  exchanges:
+    internal: internal.exchange
+  queues:
+    email: email.queue
+  routing-keys:
+    internal-email: internal.email.routing-key

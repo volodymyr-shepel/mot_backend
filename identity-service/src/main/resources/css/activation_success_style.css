@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.banner {
+    background-color: #0077B6;
+    color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.login-button {
+    margin-top: 20px;
+}
+
+.login-button a {
+    text-decoration: none;
+    color: #0077B6;
+    font-weight: bold;
+}

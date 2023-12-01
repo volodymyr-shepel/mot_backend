@@ -1,0 +1,44 @@
+server:
+  port: 8087
+
+spring:
+  application:
+    name: identity-service
+  datasource:
+    username: admin
+    password: root
+    url: jdbc:postgresql://localhost:5440/identity
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        register: true
+        prefer-ip-address: true
+        service-name: identity-service
+        instance-id: ${spring.application.name}:${server.port}
+  zipkin:
+    base-url: localhost:9411
+  rabbitmq:
+    addresses: localhost:5672
+
+app:
+  rabbitmq:
+    internal-exchange : internal.exchange
+    email-routing-key : internal.email.routing-key
+  base-url : ${BASE_URL}
+  security:
+    jwt:
+      issuer : ${ISSUER}
+      secret : ${JWT_SECRET}
+      expires-in : 900000 # 15 minutes
+      refresh-token:
+        expires-in : 604800000 # 7 days
