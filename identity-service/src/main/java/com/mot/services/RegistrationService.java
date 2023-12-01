@@ -37,6 +37,9 @@ public class RegistrationService {
     @Value("${app.base-url}")
     private String baseUrl;
 
+    @Value("${app.config.verification-email-subject}")
+    private String verificationEmailSubject;
+
     @Autowired
     public RegistrationService(PasswordValidator passwordValidator, AppUserRepository appUserRepository, RabbitMQMessageProducer rabbitMQMessageProducer, PasswordEncoder passwordEncoder, ConfirmationTokenService confirmationTokenService) {
         this.passwordValidator = passwordValidator;
@@ -49,7 +52,6 @@ public class RegistrationService {
 
     @Transactional
     public ResponseEntity<Integer> register(AppUserDTO appUserDTO) {
-        String EMAIL_SUBJECT = "Verify your email";
 
         // used to validate the password
         passwordValidator.validate(appUserDTO.password());
@@ -64,7 +66,7 @@ public class RegistrationService {
         // last hash map is map of fields in thymeleaf template, so the name
         NotificationDTO notification = new NotificationDTO(
                 createdUser.getUsername(),
-                EMAIL_SUBJECT,
+                verificationEmailSubject,
                 NotificationType.EMAIL_VERIFICATION,
                 generateVerificationEmailFields(createdUser)
         );
@@ -102,7 +104,9 @@ public class RegistrationService {
         String confirmationLink = generateConfirmationLink(token);
 
         return new HashMap<>() {{
+            // there is a placeholder in html template which represents the confirmation link
             put("link", confirmationLink);
+            // there is a placeholder in html template which represents the name of the user
             put("name", appUser.getFirstName());
         }};
     }

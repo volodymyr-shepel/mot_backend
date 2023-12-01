@@ -20,6 +20,8 @@ public class IdentityExceptionHandler {
             PasswordValidationException.class,
             InvalidConfirmationTokenException.class,
             UsernameNotFoundException.class
+
+
     })
     public ResponseEntity<Object> handleCustomExceptions(RuntimeException e) {
         HttpStatus badRequest = HttpStatus.BAD_REQUEST;

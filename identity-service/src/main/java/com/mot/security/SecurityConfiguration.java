@@ -2,6 +2,7 @@ package com.mot.security;
 
 import com.mot.appUser.AppUserDetailsService;
 import com.mot.appUser.AppUserRepository;
+import com.mot.appUser.UserRole;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,8 +14,12 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractAuthenticationFilterConfigurer;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint;
 
 @Configuration
 @EnableWebSecurity
@@ -24,12 +29,23 @@ public class SecurityConfiguration {
 
     private final PasswordEncoder passwordEncoder;
 
+    private final JwtTokenFilter jwtTokenFilter;
+
+    private final JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
 
     @Autowired
-    public SecurityConfiguration(AppUserRepository appUserRepository, PasswordEncoder passwordEncoder) {
+    public SecurityConfiguration(AppUserRepository appUserRepository, PasswordEncoder passwordEncoder, JwtTokenFilter jwtTokenFilter, JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint) {
         this.appUserRepository = appUserRepository;
         this.passwordEncoder = passwordEncoder;
+        this.jwtTokenFilter = jwtTokenFilter;
+        this.jwtAuthenticationEntryPoint = jwtAuthenticationEntryPoint;
     }
+
+
+
+
+
+
 
     // Security Filter Chain
     @Bean
@@ -38,12 +54,18 @@ public class SecurityConfiguration {
         http
 
                 .authorizeHttpRequests((auth) -> auth
+
+                        .requestMatchers("/api/auth/admin/**").hasAuthority(UserRole.ADMIN.name())
                         .requestMatchers("/api/auth/**").permitAll()
-                        .anyRequest().permitAll()
+                        .requestMatchers("/actuator/health").permitAll()
+                        .anyRequest().authenticated()
 
                 )
                 .formLogin(AbstractAuthenticationFilterConfigurer::permitAll);
         http.authenticationProvider(authenticationProvider());
+        http.exceptionHandling(e -> e.authenticationEntryPoint(jwtAuthenticationEntryPoint));
+        http.sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+        http.addFilterBefore(jwtTokenFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }
@@ -70,6 +92,7 @@ public class SecurityConfiguration {
         // passwords stored in the database during the authentication process.
 
         authenticationProvider.setPasswordEncoder(passwordEncoder.bCryptPasswordEncoder());
+
         return authenticationProvider;
 
     }
@@ -80,6 +103,9 @@ public class SecurityConfiguration {
         return new AppUserDetailsService(appUserRepository);
 
     }
+
+
+
 
 
 

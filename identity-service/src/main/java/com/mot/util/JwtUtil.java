@@ -1,12 +1,17 @@
 package com.mot.util;
 
-import com.mot.appUser.AppUser;
+import com.mot.appUser.UserRole;
+import com.mot.exceptions.JwtValidationException;
 import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpHeaders;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
@@ -25,8 +30,7 @@ public class JwtUtil {
     @Value("${app.security.jwt.expires-in}")
     private Long accessTokenExpiresIn;
 
-    @Value("${app.security.jwt.refresh-token.expires-in}")
-    private Long refreshTokenExpiresIn;
+
 
     @Value("${app.security.jwt.issuer}")
     private String issuer;
@@ -46,9 +50,6 @@ public class JwtUtil {
         return buildToken(claims, userDetails,accessTokenExpiresIn);
     }
 
-    public String generateRefreshToken(UserDetails userDetails) {
-        return buildToken(new HashMap<>(),userDetails,refreshTokenExpiresIn);
-    }
     private String buildToken(Map<String, Object> claims, UserDetails userDetails,Long expiration) {
         return Jwts.builder()
                 .setClaims(claims)
@@ -83,9 +84,51 @@ public class JwtUtil {
     public  Boolean isTokenExpired(String token) {
         return extractExpiration(token).before(new Date());
     }
-    public Boolean validateToken(String token, UserDetails userDetails) {
-        final String username = extractUsername(token);
-        return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
+    public void validateToken(String token){
+
+        // Parse and validate the token
+        Jws<Claims> claimsJws = Jwts.parserBuilder()
+                .setSigningKey(getSigningKey())
+                .build()
+                .parseClaimsJws(token);
+
+
+        // If no exceptions are thrown, the token is valid
+
     }
+    public List<GrantedAuthority> extractAuthoritiesFromToken(String authHeader) {
+        List<String> userRoles = extractRolesFromToken(authHeader);
+        List<GrantedAuthority> authorities = new ArrayList<>();
+        for (String role : userRoles) {
+            // Assuming your UserRole class has a method to get the role name
+            authorities.add(new SimpleGrantedAuthority(role));
+        }
+        return authorities;
+    }
+    public List<String> extractRolesFromToken(String authHeader) {
+        Claims claims = extractAllClaims(authHeader);
+        return (List<String>) claims.get("roles");
+    }
+    public Boolean checkUserRole(String authHeader, UserRole requiredRole) {
+        List<String> roles = extractRolesFromToken(authHeader);
+
+        if (!roles.contains(requiredRole.toString())) {
+            return false;
+        }
+        return true;
+    }
+    public static String extractAuthToken(String authHeader) {
+
+
+
+        if (authHeader.startsWith("Bearer ")) {
+            // Extract the JWT token
+            return authHeader.substring(7);
+        }
+
+        return null;
+
+    }
+
 
 }

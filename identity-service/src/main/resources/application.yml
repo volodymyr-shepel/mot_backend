@@ -10,7 +10,7 @@ spring:
     url: jdbc:postgresql://localhost:5440/identity
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
@@ -31,6 +31,8 @@ spring:
     addresses: localhost:5672
 
 app:
+  config:
+    verification-email-subject : ${VERIFICATION_EMAIL_SUBJECT}
   rabbitmq:
     internal-exchange : internal.exchange
     email-routing-key : internal.email.routing-key
@@ -39,6 +41,6 @@ app:
     jwt:
       issuer : ${ISSUER}
       secret : ${JWT_SECRET}
-      expires-in : 900000 # 15 minutes
+      expires-in : 900000 # The value is displayed in milliseconds  // 15 minutes
       refresh-token:
-        expires-in : 604800000 # 7 days
+        expires-in : 7 # 7 days

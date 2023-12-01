@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.UUID;
 
 @Service
@@ -27,7 +26,8 @@ public class AuthenticationService {
     private Integer accessTokenExpiresIn;
 
     @Value("${app.security.jwt.refresh-token.expires-in}")
-    private Integer refreshTokenExpiresIn;
+    private Integer refreshTokenExpiresIn; // the value is provided in days
+
 
 
     public AuthenticationService(AuthenticationManager authenticationManager, RefreshTokenRepository refreshTokenRepository, JwtUtil jwtUtil) {
@@ -38,17 +38,17 @@ public class AuthenticationService {
 
     @Transactional
     public ResponseEntity<AuthenticationResponse> authenticate(AuthenticationRequest authenticationRequest) {
+
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
                         authenticationRequest.email(), authenticationRequest.password())
         );
+
         //extracts the authenticated user's information from the Authentication object's principal
         AppUser user = (AppUser) authentication.getPrincipal();
 
         String accessToken = jwtUtil.generateAccessToken(user);
 
-        // Refresh token is in the form of jwt
-        //String refreshToken = jwtUtil.generateRefreshToken(user);
 
         UUID refreshToken = saveRefreshToken(user);
 

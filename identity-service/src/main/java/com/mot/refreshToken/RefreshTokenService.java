@@ -36,18 +36,20 @@ public class RefreshTokenService {
 
 
     public AuthenticationResponse refreshToken(UUID token) {
-        final String userEmail;
 
-
+        // verify whether the provided refresh token is present in the db
         RefreshToken refreshToken = refreshTokenRepository.findById(token)
                 .orElseThrow(() ->
                         new InvalidConfirmationTokenException("Refresh token not found"));
 
+        // extract the user since it is needed in order to generate refresh token, and verify whether the user associated
+        // with the provided refresh token still exists
         AppUser appUser = appUserRepository.findByEmail(
                 refreshToken.getAppUser().getUsername()).orElseThrow(() ->
                 new InvalidConfirmationTokenException("There is no user associated with this refresh token"));
 
 
+        // verify whether refresh token has expired
         if (LocalDateTime.now().isAfter(refreshToken.getExpiresAt())) {
             throw new InvalidConfirmationTokenException("Token has expired");
         }
