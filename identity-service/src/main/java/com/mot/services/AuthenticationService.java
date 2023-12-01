@@ -13,6 +13,10 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
+import java.util.Date;
+import java.util.UUID;
+
 @Service
 public class AuthenticationService {
     private final AuthenticationManager authenticationManager;
@@ -43,14 +47,16 @@ public class AuthenticationService {
 
         String accessToken = jwtUtil.generateAccessToken(user);
 
-        String refreshToken = jwtUtil.generateRefreshToken(user);
-        saveRefreshToken(refreshToken,user);
+        // Refresh token is in the form of jwt
+        //String refreshToken = jwtUtil.generateRefreshToken(user);
+
+        UUID refreshToken = saveRefreshToken(user);
 
         AuthenticationResponse response = buildAuthenticationResponse(accessToken,refreshToken);
         return ResponseEntity.ok(response);
     }
 
-    private AuthenticationResponse buildAuthenticationResponse(String accessToken,String refreshToken){
+    private AuthenticationResponse buildAuthenticationResponse(String accessToken,UUID refreshToken){
         return new AuthenticationResponse(
                 accessToken,
                 accessTokenExpiresIn,
@@ -61,12 +67,16 @@ public class AuthenticationService {
 
     }
 
-    private void saveRefreshToken(String token, AppUser user){
+    private UUID saveRefreshToken(AppUser user){
         RefreshToken refreshToken = new RefreshToken(
-                token,
+                LocalDateTime.now(),
+                LocalDateTime.now().plusDays(7),
                 user
         );
-        refreshTokenRepository.save(refreshToken);
+        RefreshToken savedToken = refreshTokenRepository.save(refreshToken);
+
+        return savedToken.getId();
+
 
     }
 }

@@ -15,6 +15,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.UUID;
+
 @RestController
 @RequestMapping(path = "/api/auth")
 public class AuthController {
@@ -51,8 +53,8 @@ public class AuthController {
         return confirmationTokenService.confirmToken(token);
     }
     @PostMapping(path = "/refreshToken")
-    public AuthenticationResponse refreshToken(@RequestBody RefreshTokenRequest refreshTokenRequest){
-        return refreshTokenService.refreshToken(refreshTokenRequest);
+    public AuthenticationResponse refreshToken(@RequestParam UUID token){
+        return refreshTokenService.refreshToken(token);
     }
 
 }

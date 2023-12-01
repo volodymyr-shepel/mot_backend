@@ -3,6 +3,8 @@ package com.mot.dtos;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 
+import java.util.UUID;
+
 @Builder
 public record AuthenticationResponse(
         @JsonProperty("access_token")
@@ -13,6 +15,6 @@ public record AuthenticationResponse(
         Integer refreshExpiresIn,
 
         @JsonProperty("refresh_token")
-        String refreshToken
+        UUID refreshToken
 ) {
 }

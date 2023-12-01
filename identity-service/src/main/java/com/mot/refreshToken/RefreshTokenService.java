@@ -2,22 +2,15 @@ package com.mot.refreshToken;
 
 import com.mot.appUser.AppUser;
 import com.mot.appUser.AppUserRepository;
-import com.mot.confirmationToken.ConfirmationToken;
 import com.mot.dtos.AuthenticationResponse;
-import com.mot.dtos.RefreshTokenRequest;
 import com.mot.exceptions.InvalidConfirmationTokenException;
 import com.mot.util.JwtUtil;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.NoSuchElementException;
+import java.util.UUID;
 
 @Service
 public class RefreshTokenService {
@@ -42,13 +35,11 @@ public class RefreshTokenService {
     }
 
 
-    public AuthenticationResponse refreshToken(RefreshTokenRequest refreshTokenRequest) {
-        final String token;
+    public AuthenticationResponse refreshToken(UUID token) {
         final String userEmail;
 
-        token = refreshTokenRequest.refreshToken();
 
-        RefreshToken refreshToken = refreshTokenRepository.findByToken(token)
+        RefreshToken refreshToken = refreshTokenRepository.findById(token)
                 .orElseThrow(() ->
                         new InvalidConfirmationTokenException("Refresh token not found"));
 
@@ -57,7 +48,7 @@ public class RefreshTokenService {
                 new InvalidConfirmationTokenException("There is no user associated with this refresh token"));
 
 
-        if (jwtUtil.isTokenExpired(token)) {
+        if (LocalDateTime.now().isAfter(refreshToken.getExpiresAt())) {
             throw new InvalidConfirmationTokenException("Token has expired");
         }
 
@@ -69,6 +60,5 @@ public class RefreshTokenService {
                 refreshTokenExpiresIn,
                 token
         );
-
     }
 }

@@ -5,54 +5,49 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Entity
 public class RefreshToken {
     @Id
     @GeneratedValue
-    private Long id;
+    private UUID id;
 
     // represents the token which will be included as path variable in confirmation link
     @NotNull
-    private String token;
+    private LocalDateTime createdAt;
 
-    // The user may have multiple confirmation tokens associated with them in case they cannot
-    // confirm it in time or do not receive the email.
+    @NotNull
+    private LocalDateTime expiresAt;
+
+
     @NotNull
     @ManyToOne
     private AppUser appUser;
 
-    public RefreshToken(Long id, String token, AppUser appUser) {
-        this.id = id;
-        this.token = token;
+    public RefreshToken(LocalDateTime createdAt, LocalDateTime expiresAt, AppUser appUser) {
+        this.createdAt = createdAt;
+        this.expiresAt = expiresAt;
         this.appUser = appUser;
     }
+
     public RefreshToken(){
 
     }
 
-    public RefreshToken(String token, AppUser appUser) {
-        this.token = token;
-        this.appUser = appUser;
-    }
-
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public String getToken() {
-        return token;
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public LocalDateTime getExpiresAt() {
+        return expiresAt;
     }
 
     public AppUser getAppUser() {
         return appUser;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
-    }
-
-    public void setAppUser(AppUser appUser) {
-        this.appUser = appUser;
     }
 }
