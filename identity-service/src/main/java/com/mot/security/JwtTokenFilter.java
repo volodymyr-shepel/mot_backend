@@ -39,22 +39,19 @@ public class JwtTokenFilter extends OncePerRequestFilter {
         }
         String accessToken = JwtUtil.extractAuthToken(authHeader);
 
-        //jwtUtil.validateToken(accessToken);
+
+//        if(accessToken != null && !accessToken.isEmpty()){
+//            filterChain.doFilter(request,response);
+//        }
 
         // TODO: Try to modify so it does not log error messages to the console if token verification fails??
-        // problem with throwing an exception inside filter
+
         jwtUtil.validateToken(accessToken);
 
-
-        // Extract roles from claims
-//        if(!jwtUtil.checkUserRole(accessToken, UserRole.ADMIN)){
-//            filterChain.doFilter(request,response);
-//        };
 
         setAuthenticationContext(accessToken,request);
 
         filterChain.doFilter(request,response);
-
     }
 
     private void setAuthenticationContext(String token, HttpServletRequest request) {
@@ -69,6 +66,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
     }
+
 
 
 

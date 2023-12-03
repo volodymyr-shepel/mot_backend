@@ -16,10 +16,8 @@ import org.springframework.security.config.annotation.web.configurers.AbstractAu
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint;
 
 @Configuration
 @EnableWebSecurity
@@ -56,8 +54,9 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests((auth) -> auth
 
                         .requestMatchers("/api/auth/admin/**").hasAuthority(UserRole.ADMIN.name())
+                        .requestMatchers("/api/auth/customer/**").hasAuthority(UserRole.CUSTOMER.name())
                         .requestMatchers("/api/auth/**").permitAll()
-                        .requestMatchers("/actuator/health").permitAll()
+                        .requestMatchers("/actuator/health").permitAll() // used to permit health checks
                         .anyRequest().authenticated()
 
                 )

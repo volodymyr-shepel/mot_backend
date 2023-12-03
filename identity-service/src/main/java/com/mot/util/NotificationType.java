@@ -1,5 +1,5 @@
 package com.mot.util;
 
 public enum NotificationType {
-    EMAIL_VERIFICATION
+    EMAIL_VERIFICATION,
 }

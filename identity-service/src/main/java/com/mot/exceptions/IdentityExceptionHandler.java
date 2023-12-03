@@ -18,8 +18,9 @@ import java.util.stream.Collectors;
 public class IdentityExceptionHandler {
     @ExceptionHandler(value = {
             PasswordValidationException.class,
-            InvalidConfirmationTokenException.class,
-            UsernameNotFoundException.class
+            InvalidTokenException.class,
+            UsernameNotFoundException.class,
+            IllegalStateException.class
 
 
     })

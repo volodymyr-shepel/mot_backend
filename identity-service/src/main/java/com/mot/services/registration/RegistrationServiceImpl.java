@@ -1,9 +1,9 @@
-package com.mot.services;
+package com.mot.services.registration;
 
 import com.mot.amqp.RabbitMQMessageProducer;
 import com.mot.appUser.AppUser;
 import com.mot.appUser.AppUserRepository;
-import com.mot.confirmationToken.ConfirmationTokenService;
+import com.mot.confirmationToken.ConfirmationTokenServiceImpl;
 import com.mot.dtos.AppUserDTO;
 import com.mot.dtos.NotificationDTO;
 import com.mot.util.NotificationType;
@@ -20,12 +20,12 @@ import java.util.HashMap;
 
 
 @Service
-public class RegistrationService {
+public class RegistrationServiceImpl implements RegistrationService{
     private final PasswordValidator passwordValidator;
     private final AppUserRepository appUserRepository;
     private final RabbitMQMessageProducer rabbitMQMessageProducer;
     private final PasswordEncoder passwordEncoder;
-    private final ConfirmationTokenService confirmationTokenService;
+    private final ConfirmationTokenServiceImpl confirmationTokenServiceImpl;
 
 
     @Value("${app.rabbitmq.internal-exchange}")
@@ -41,12 +41,12 @@ public class RegistrationService {
     private String verificationEmailSubject;
 
     @Autowired
-    public RegistrationService(PasswordValidator passwordValidator, AppUserRepository appUserRepository, RabbitMQMessageProducer rabbitMQMessageProducer, PasswordEncoder passwordEncoder, ConfirmationTokenService confirmationTokenService) {
+    public RegistrationServiceImpl(PasswordValidator passwordValidator, AppUserRepository appUserRepository, RabbitMQMessageProducer rabbitMQMessageProducer, PasswordEncoder passwordEncoder, ConfirmationTokenServiceImpl confirmationTokenServiceImpl) {
         this.passwordValidator = passwordValidator;
         this.appUserRepository = appUserRepository;
         this.rabbitMQMessageProducer = rabbitMQMessageProducer;
         this.passwordEncoder = passwordEncoder;
-        this.confirmationTokenService = confirmationTokenService;
+        this.confirmationTokenServiceImpl = confirmationTokenServiceImpl;
     }
 
 
@@ -100,7 +100,7 @@ public class RegistrationService {
 
 
     private HashMap<String,String> generateVerificationEmailFields(AppUser appUser){
-        String token = confirmationTokenService.generateConfirmationToken(appUser);
+        String token = confirmationTokenServiceImpl.generateConfirmationToken(appUser);
         String confirmationLink = generateConfirmationLink(token);
 
         return new HashMap<>() {{

@@ -10,7 +10,7 @@ spring:
     url: jdbc:postgresql://localhost:5440/identity
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
@@ -38,9 +38,12 @@ app:
     email-routing-key : internal.email.routing-key
   base-url : ${BASE_URL}
   security:
+    confirmation-token:
+      expires-in: 900 # value provided in seconds 15 minutes
+
     jwt:
       issuer : ${ISSUER}
       secret : ${JWT_SECRET}
-      expires-in : 900000 # The value is displayed in milliseconds  // 15 minutes
+      expires-in : 900 # The value is provided in seconds  // 15 minutes
       refresh-token:
-        expires-in : 7 # 7 days
+        expires-in : 604800 # The value is provided in seconds 7 days

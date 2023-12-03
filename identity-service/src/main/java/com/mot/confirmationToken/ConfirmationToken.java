@@ -19,7 +19,6 @@ public class ConfirmationToken {
     @NotNull
     private String token;
 
-
     @NotNull
     private LocalDateTime createdAt;
 

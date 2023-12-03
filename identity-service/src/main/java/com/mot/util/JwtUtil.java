@@ -1,15 +1,11 @@
 package com.mot.util;
 
-import com.mot.appUser.UserRole;
-import com.mot.exceptions.JwtValidationException;
+
 import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpHeaders;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -56,7 +52,8 @@ public class JwtUtil {
                 .setSubject(userDetails.getUsername())
                 .setIssuer(issuer)
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + expiration))
+                // multiply by 1000 in order to change seconds to milliseconds
+                .setExpiration(new Date(System.currentTimeMillis() + (expiration * 1000)))
                 .signWith(getSigningKey(), SignatureAlgorithm.HS256)
                 .compact();
     }
@@ -87,11 +84,10 @@ public class JwtUtil {
     public void validateToken(String token){
 
         // Parse and validate the token
-        Jws<Claims> claimsJws = Jwts.parserBuilder()
+        Jwts.parserBuilder()
                 .setSigningKey(getSigningKey())
                 .build()
                 .parseClaimsJws(token);
-
 
         // If no exceptions are thrown, the token is valid
 
@@ -109,17 +105,8 @@ public class JwtUtil {
         Claims claims = extractAllClaims(authHeader);
         return (List<String>) claims.get("roles");
     }
-    public Boolean checkUserRole(String authHeader, UserRole requiredRole) {
-        List<String> roles = extractRolesFromToken(authHeader);
 
-        if (!roles.contains(requiredRole.toString())) {
-            return false;
-        }
-        return true;
-    }
     public static String extractAuthToken(String authHeader) {
-
-
 
         if (authHeader.startsWith("Bearer ")) {
             // Extract the JWT token

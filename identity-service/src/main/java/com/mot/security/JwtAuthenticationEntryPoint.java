@@ -12,6 +12,10 @@ import java.io.IOException;
 
 
 
+//The JwtAuthenticationEntryPoint class is an implementation of Spring Security's AuthenticationEntryPoint
+//interface. It is used to handle and customize the behavior when an unauthenticated user tries to access
+//        a secured resource.
+
 @Component
 public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint {
     @Override

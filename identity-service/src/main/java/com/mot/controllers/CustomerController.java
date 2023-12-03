@@ -5,10 +5,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(path = "/api/auth/admin")
-public class AdminController {
+@RequestMapping(path = "/api/auth/customer")
+public class CustomerController {
     @GetMapping(path = "/test")
     public String test(){
-        return "admin hello";
+        return "customer hello";
     }
 }
