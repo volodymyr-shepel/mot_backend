@@ -1,6 +1,6 @@
 package com.mot.dtos;
 
-public record ResendVerificationEmailRequest (
+public record EmailAddressDTO(
         String email
 ){
 

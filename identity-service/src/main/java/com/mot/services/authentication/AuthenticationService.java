@@ -1,12 +1,15 @@
 package com.mot.services.authentication;
 
-import com.mot.dtos.AuthenticationRequest;
-import com.mot.dtos.AuthenticationResponse;
-import com.mot.dtos.ResendVerificationEmailRequest;
+import com.mot.dtos.UserAuthenticationRequest;
+import com.mot.dtos.UserAuthenticationResponse;
+import com.mot.dtos.EmailAddressDTO;
 import org.springframework.http.ResponseEntity;
 
-public interface AuthenticationService {
-    ResponseEntity<AuthenticationResponse> authenticate(AuthenticationRequest authenticationRequest);
+import java.util.UUID;
 
-    ResponseEntity<String> resendVerificationEmail(ResendVerificationEmailRequest resendVerificationEmailRequest);
+public interface AuthenticationService {
+    ResponseEntity<UserAuthenticationResponse> authenticate(UserAuthenticationRequest userAuthenticationRequest);
+
+    UserAuthenticationResponse buildAuthenticationResponse(String accessToken, UUID refreshToken);
+
 }

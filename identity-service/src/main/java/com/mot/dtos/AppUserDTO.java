@@ -6,7 +6,6 @@ public record AppUserDTO(String email,
                          String firstName,
                          String lastName,
                          String password,
-
                          UserRole userRole) {
 }
 

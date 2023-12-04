@@ -1,6 +1,6 @@
 package com.mot.dtos;
 
-public record RefreshTokenRequest(
+public record RefreshTokenDTO(
         String refreshToken
 ){
 }

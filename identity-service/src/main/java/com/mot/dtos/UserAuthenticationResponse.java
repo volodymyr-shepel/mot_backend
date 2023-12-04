@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.UUID;
 
 
-public record AuthenticationResponse(
+public record UserAuthenticationResponse(
         @JsonProperty("access_token")
         String accessToken,
         @JsonProperty("expires_in")

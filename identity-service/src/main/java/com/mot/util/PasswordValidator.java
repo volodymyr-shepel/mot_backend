@@ -1,13 +1,11 @@
 package com.mot.util;
 
 import com.mot.exceptions.PasswordValidationException;
-import org.springframework.stereotype.Service;
 
 import java.util.regex.Pattern;
 
-@Service
 public class PasswordValidator {
-    public void validate(String password) throws PasswordValidationException {
+    public static void validate(String password) throws PasswordValidationException {
         // Minimum 12 characters
         if (password.length() < 12) {
             throw new PasswordValidationException("Password must be at least 12 characters long.");

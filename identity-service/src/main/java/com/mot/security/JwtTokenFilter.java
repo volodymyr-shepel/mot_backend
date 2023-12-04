@@ -39,17 +39,20 @@ public class JwtTokenFilter extends OncePerRequestFilter {
         }
         String accessToken = JwtUtil.extractAuthToken(authHeader);
 
+        if(accessToken == null || accessToken.isEmpty()){
+            filterChain.doFilter(request,response);
+            return;
+        }
 
-//        if(accessToken != null && !accessToken.isEmpty()){
-//            filterChain.doFilter(request,response);
-//        }
+        if(!jwtUtil.validateToken(accessToken)){
+            filterChain.doFilter(request,response);
+            return;
+        };
 
-        // TODO: Try to modify so it does not log error messages to the console if token verification fails??
-
-        jwtUtil.validateToken(accessToken);
 
 
         setAuthenticationContext(accessToken,request);
+
 
         filterChain.doFilter(request,response);
     }

@@ -1,9 +1,9 @@
 package com.mot.refreshToken;
 
-import com.mot.dtos.AuthenticationResponse;
+import com.mot.dtos.UserAuthenticationResponse;
 
 import java.util.UUID;
 
 public interface RefreshTokenService {
-    AuthenticationResponse refreshToken(UUID token);
+    UserAuthenticationResponse refreshToken(UUID token);
 }

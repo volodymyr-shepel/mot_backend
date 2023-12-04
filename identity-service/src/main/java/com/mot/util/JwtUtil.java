@@ -26,8 +26,6 @@ public class JwtUtil {
     @Value("${app.security.jwt.expires-in}")
     private Long accessTokenExpiresIn;
 
-
-
     @Value("${app.security.jwt.issuer}")
     private String issuer;
 
@@ -81,15 +79,21 @@ public class JwtUtil {
     public  Boolean isTokenExpired(String token) {
         return extractExpiration(token).before(new Date());
     }
-    public void validateToken(String token){
+    public Boolean validateToken(String token){
+        try{
+            // Parse and validate the token
+            Jwts.parserBuilder()
+                    .setSigningKey(getSigningKey())
+                    .build()
+                    .parseClaimsJws(token);
 
-        // Parse and validate the token
-        Jwts.parserBuilder()
-                .setSigningKey(getSigningKey())
-                .build()
-                .parseClaimsJws(token);
+            // If no exceptions are thrown, the token is valid
+            return true;
+        }
+        catch(Exception e){
+            return false;
+        }
 
-        // If no exceptions are thrown, the token is valid
 
     }
     public List<GrantedAuthority> extractAuthoritiesFromToken(String authHeader) {
@@ -112,7 +116,6 @@ public class JwtUtil {
             // Extract the JWT token
             return authHeader.substring(7);
         }
-
         return null;
 
     }
