@@ -1,6 +1,6 @@
 package com.mot.dtos;
 
-import com.mot.appUser.UserRole;
+import com.mot.enums.UserRole;
 
 public record AppUserDTO(String email,
                          String firstName,

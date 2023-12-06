@@ -1,6 +1,6 @@
 package com.mot.dtos;
 
-import com.mot.util.NotificationType;
+import com.mot.enums.NotificationType;
 
 import java.util.Map;
 

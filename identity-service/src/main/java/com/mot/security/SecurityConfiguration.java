@@ -1,8 +1,8 @@
 package com.mot.security;
 
-import com.mot.appUser.AppUserDetailsService;
-import com.mot.appUser.AppUserRepository;
-import com.mot.appUser.UserRole;
+import com.mot.service.appUser.AppUserDetailsService;
+import com.mot.repository.AppUserRepository;
+import com.mot.enums.UserRole;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

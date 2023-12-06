@@ -3,7 +3,7 @@ services:
 
   # databases
   # identity-service postgres database
-  postgres:
+  postgres-identity:
     image: postgres:16.1
     container_name: mot_identity_postgres
     environment:
@@ -17,6 +17,19 @@ services:
     networks:
       - mot
 
+  postgres-notification:
+    image: postgres:16.1
+    container_name: mot_notification_postgres
+    environment:
+      POSTGRES_DB: notification
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: root
+    ports:
+      - "5441:5432"
+    volumes:
+      - identity_service_data:/var/lib/postgresql/data
+    networks:
+      - mot
   #pgadmin4
   pgadmin:
     image: dpage/pgadmin4:7.4
@@ -29,8 +42,6 @@ services:
       - "8086:80"
     networks:
       - mot
-    depends_on:
-      - postgres
 
   zipkin:
     image: openzipkin/zipkin

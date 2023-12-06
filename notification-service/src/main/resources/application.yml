@@ -5,10 +5,22 @@ app:
   email-from: ${EMAIL_FROM}
   email-from-name: ${EMAIL_FROM_NAME}
 
+
 spring:
   application:
     name : notification-service
-
+  datasource:
+    username: admin
+    password: root
+    url: jdbc:postgresql://localhost:5441/notification
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
   cloud:
     consul:
       host: localhost
@@ -18,7 +30,6 @@ spring:
         prefer-ip-address: true
         service-name: notification-service
         instance-id: ${spring.application.name}:${server.port}
-
   mail:
     host: smtp.gmail.com
     port: 587
