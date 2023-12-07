@@ -44,6 +44,8 @@ public class RegistrationServiceImpl implements RegistrationService{
         Integer userId = appUserRepository.saveAndFlush(createdUser).getId();
 
         // used to send verification email
+        
+        //TODO: HANDLE IT IN AOP WAY
         emailService.sendVerificationEmail(createdUser);
 
         return ResponseEntity.status(HttpStatus.CREATED)
