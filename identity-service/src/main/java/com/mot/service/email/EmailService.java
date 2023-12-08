@@ -13,4 +13,6 @@ public interface EmailService {
     void sendEmail(NotificationDTO notification);
 
     void sendVerificationEmail(AppUser appUser);
+
+    void sendForgetPasswordEmail(AppUser user);
 }

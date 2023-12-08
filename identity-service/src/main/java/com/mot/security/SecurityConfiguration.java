@@ -58,6 +58,7 @@ public class SecurityConfiguration {
                         .requestMatchers("/api/auth/email/**").permitAll()
                         .requestMatchers("/api/auth/token/**").permitAll()
                         .requestMatchers("/api/auth/user/**").permitAll()
+                        .requestMatchers("/api/auth/account/**").permitAll()
                         .requestMatchers("/actuator/health").permitAll() // used to permit health checks
                         .anyRequest().authenticated()
 

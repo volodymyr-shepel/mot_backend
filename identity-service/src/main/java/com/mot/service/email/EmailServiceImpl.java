@@ -3,7 +3,7 @@ package com.mot.service.email;
 import com.mot.amqp.RabbitMQMessageProducer;
 import com.mot.model.AppUser;
 import com.mot.repository.AppUserRepository;
-import com.mot.service.confirmationToken.ConfirmationTokenService;
+import com.mot.service.verificationToken.VerificationTokenService;
 import com.mot.dtos.EmailAddressDTO;
 import com.mot.dtos.NotificationDTO;
 import com.mot.exception.UserNotFoundException;
@@ -20,21 +20,23 @@ public class EmailServiceImpl implements EmailService{
     private String emailRoutingKey;
 
     private final RabbitMQMessageProducer rabbitMQMessageProducer;
-    private final ConfirmationTokenService confirmationTokenServiceImpl;
+    private final VerificationTokenService verificationTokenServiceImpl;
     private final AppUserRepository appUserRepository;
 
     private final VerificationEmailService verificationEmailService;
+    private final ResetPasswordEmailService resetPasswordEmailService;
 
-    public EmailServiceImpl(RabbitMQMessageProducer rabbitMQMessageProducer, ConfirmationTokenService confirmationTokenServiceImpl, AppUserRepository appUserRepository, VerificationEmailService verificationEmailService) {
+    public EmailServiceImpl(RabbitMQMessageProducer rabbitMQMessageProducer, VerificationTokenService verificationTokenServiceImpl, AppUserRepository appUserRepository, VerificationEmailService verificationEmailService, ResetPasswordEmailService resetPasswordEmailService) {
         this.rabbitMQMessageProducer = rabbitMQMessageProducer;
-        this.confirmationTokenServiceImpl = confirmationTokenServiceImpl;
+        this.verificationTokenServiceImpl = verificationTokenServiceImpl;
         this.appUserRepository = appUserRepository;
         this.verificationEmailService = verificationEmailService;
+        this.resetPasswordEmailService = resetPasswordEmailService;
     }
 
     @Override
     public ResponseEntity<String> confirmEmail(String token) {
-        return confirmationTokenServiceImpl.confirmToken(token);
+        return verificationTokenServiceImpl.confirmToken(token);
     }
     @Override
     public ResponseEntity<String> resendVerificationEmail(EmailAddressDTO emailAddressDTO) {
@@ -62,6 +64,12 @@ public class EmailServiceImpl implements EmailService{
     public void sendVerificationEmail(AppUser appUser) {
         NotificationDTO verificationEmailNotification = verificationEmailService.buildNotificationDTO(appUser);
         sendEmail(verificationEmailNotification);
+    }
+
+
+    public void sendForgetPasswordEmail(AppUser appUser){
+        NotificationDTO resetPasswordEmailNotification = resetPasswordEmailService.buildNotificationDTO(appUser);
+        sendEmail(resetPasswordEmailNotification);
     }
 
 

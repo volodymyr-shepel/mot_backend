@@ -1,8 +1,8 @@
 package com.mot.service.email;
 
 import com.mot.model.AppUser;
-import com.mot.repository.ConfirmationTokenRepository;
-import com.mot.service.confirmationToken.ConfirmationTokenService;
+import com.mot.repository.VerificationTokenRepository;
+import com.mot.service.verificationToken.VerificationTokenService;
 import com.mot.dtos.NotificationDTO;
 import com.mot.enums.NotificationType;
 import org.springframework.beans.factory.annotation.Value;
@@ -20,25 +20,25 @@ public class VerificationEmailService {
     @Value("${app.config.verification-email-subject}")
     private String verificationEmailSubject;
 
-    private final ConfirmationTokenService confirmationTokenServiceImpl;
+    private final VerificationTokenService verificationTokenServiceImpl;
 
-    private final ConfirmationTokenRepository confirmationTokenRepository;
+    private final VerificationTokenRepository verificationTokenRepository;
 
 
-    public VerificationEmailService(ConfirmationTokenService confirmationTokenServiceImpl, ConfirmationTokenRepository confirmationTokenRepository) {
-        this.confirmationTokenServiceImpl = confirmationTokenServiceImpl;
-        this.confirmationTokenRepository = confirmationTokenRepository;
+    public VerificationEmailService(VerificationTokenService verificationTokenServiceImpl, VerificationTokenRepository verificationTokenRepository) {
+        this.verificationTokenServiceImpl = verificationTokenServiceImpl;
+        this.verificationTokenRepository = verificationTokenRepository;
     }
 
     public NotificationDTO buildNotificationDTO(AppUser appUser){ // build notification dto for verification email
-        return new NotificationDTO(
-                appUser.getUsername(),
-                verificationEmailSubject,
-                NotificationType.EMAIL_VERIFICATION,
-                generateVerificationEmailFields(appUser)
-        );
-
+        return NotificationDTO.builder()
+                .recipient(appUser.getUsername())
+                .subject(verificationEmailSubject)
+                .notificationType(NotificationType.EMAIL_VERIFICATION)
+                .notificationFields(generateVerificationEmailFields(appUser))
+                .build();
     }
+
     public void verifyEmailForResend(AppUser appUser){
         checkIfUserIsEnabled(appUser);
         checkIfVerificationEmailIsActive(appUser);
@@ -46,18 +46,18 @@ public class VerificationEmailService {
 
 
     private HashMap<String,String> generateVerificationEmailFields(AppUser appUser){
-        String token = confirmationTokenServiceImpl.generateConfirmationToken(appUser);
-        String confirmationLink = generateConfirmationLink(token);
+        String token = verificationTokenServiceImpl.generateVerificationToken(appUser);
+        String verificationLink = generateVerificationLink(token);
 
         return new HashMap<>() {{
             // there is a placeholder in html template which represents the confirmation link
-            put("link", confirmationLink);
+            put("link", verificationLink);
             // there is a placeholder in html template which represents the name of the user
             put("name", appUser.getFirstName());
         }};
     }
 
-    private String generateConfirmationLink(String token) {
+    private String generateVerificationLink(String token) {
         return  baseUrl + "/api/auth/email/confirm?token=" + token;
     }
 
@@ -68,7 +68,7 @@ public class VerificationEmailService {
     }
 
     private void checkIfVerificationEmailIsActive(AppUser appUser) {
-        if (confirmationTokenRepository.existsByAppUserEmailAndExpiresAtAfter(appUser.getUsername(), LocalDateTime.now())) {
+        if (verificationTokenRepository.existsByAppUserEmailAndExpiresAtAfter(appUser.getUsername(), LocalDateTime.now())) {
             throw new IllegalStateException("There is an active verification email associated with the provided account." +
                     " Verify it or try again in 15 minutes");
         }

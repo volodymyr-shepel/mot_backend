@@ -43,7 +43,6 @@ public class AuthenticationServiceImpl implements AuthenticationService{
                         userAuthenticationRequest.email(), userAuthenticationRequest.password())
         );
 
-        //extracts the authenticated user's information from the Authentication object's principal
         AppUser user = (AppUser) authentication.getPrincipal();
 
         String accessToken = jwtUtil.generateAccessToken(user);
@@ -69,37 +68,10 @@ public class AuthenticationServiceImpl implements AuthenticationService{
                 LocalDateTime.now().plusSeconds(refreshTokenExpiresIn),
                 user
         );
+
         RefreshToken savedToken = refreshTokenRepository.save(refreshToken);
 
         return savedToken.getId();
     }
-
-//    @Transactional
-//    public ResponseEntity<String> verifyEmailForResend(EmailAddressDTO emailAddressDTO){
-//        // the email for which the verification email should be resent
-//
-//
-//
-//
-//        return ResponseEntity.ok("Verification email was sent successfully");
-//
-//
-//    }
-//    private HashMap<String,String> generateVerificationEmailFields(AppUser appUser){
-//        String token = confirmationTokenService.generateConfirmationToken(appUser);
-//        String confirmationLink = generateConfirmationLink(token);
-//
-//        return new HashMap<>() {{
-//            // there is a placeholder in html template which represents the confirmation link
-//            put("link", confirmationLink);
-//            // there is a placeholder in html template which represents the name of the user
-//            put("name", appUser.getFirstName());
-//        }};
-//    }
-//
-//    private String generateConfirmationLink(String token) {
-//        return  baseUrl + "/api/auth/confirm?token=" + token;
-//    }
-
 
 }

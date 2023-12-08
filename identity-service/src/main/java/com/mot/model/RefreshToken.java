@@ -1,34 +1,30 @@
 package com.mot.model;
 
-import com.mot.model.AppUser;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import lombok.Builder;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
+@Builder
 public class RefreshToken {
     @Id
     @GeneratedValue
     private UUID id;
 
-    // represents the token which will be included as path variable in confirmation link
     @NotNull
     private LocalDateTime createdAt;
 
     @NotNull
     private LocalDateTime expiresAt;
 
-
     @NotNull
     @ManyToOne
     private AppUser appUser;
 
-    public RefreshToken(LocalDateTime createdAt, LocalDateTime expiresAt, AppUser appUser) {
-        this.createdAt = createdAt;
-        this.expiresAt = expiresAt;
-        this.appUser = appUser;
+    public RefreshToken() {
     }
 
     public RefreshToken(UUID id, LocalDateTime createdAt, LocalDateTime expiresAt, AppUser appUser) {
@@ -38,8 +34,10 @@ public class RefreshToken {
         this.appUser = appUser;
     }
 
-    public RefreshToken(){
-
+    public RefreshToken(LocalDateTime createdAt, LocalDateTime expiresAt, AppUser appUser) {
+        this.createdAt = createdAt;
+        this.expiresAt = expiresAt;
+        this.appUser = appUser;
     }
 
     public UUID getId() {

@@ -9,6 +9,8 @@ import com.mot.service.registration.RegistrationService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.UUID;
+
 @RestController
 @RequestMapping(path = "/api/auth/user")
 public class UserAuthController {
@@ -23,7 +25,7 @@ public class UserAuthController {
 
     // used to register a user
     @PostMapping(path = "/register")
-    public ResponseEntity<Integer> register(@RequestBody AppUserDTO appUserDTO){
+    public ResponseEntity<UUID> register(@RequestBody AppUserDTO appUserDTO){
         return registrationServiceImpl.register(appUserDTO);
     }
 

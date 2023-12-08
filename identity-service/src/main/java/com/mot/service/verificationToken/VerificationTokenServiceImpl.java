@@ -1,10 +1,10 @@
-package com.mot.service.confirmationToken;
+package com.mot.service.verificationToken;
 
 
 import com.mot.model.AppUser;
 import com.mot.repository.AppUserRepository;
-import com.mot.model.ConfirmationToken;
-import com.mot.repository.ConfirmationTokenRepository;
+import com.mot.model.VerificationToken;
+import com.mot.repository.VerificationTokenRepository;
 import com.mot.exception.InvalidTokenException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -16,9 +16,9 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Service
-public class ConfirmationTokenServiceImpl implements ConfirmationTokenService{
+public class VerificationTokenServiceImpl implements VerificationTokenService {
 
-    private final ConfirmationTokenRepository confirmationTokenRepository;
+    private final VerificationTokenRepository verificationTokenRepository;
     private final AppUserRepository appUserRepository;
 
     @Value("${app.security.confirmation-token.expires-in}")
@@ -27,8 +27,8 @@ public class ConfirmationTokenServiceImpl implements ConfirmationTokenService{
 
 
     @Autowired
-    public ConfirmationTokenServiceImpl(ConfirmationTokenRepository confirmationTokenRepository, AppUserRepository appUserRepository) {
-        this.confirmationTokenRepository = confirmationTokenRepository;
+    public VerificationTokenServiceImpl(VerificationTokenRepository verificationTokenRepository, AppUserRepository appUserRepository) {
+        this.verificationTokenRepository = verificationTokenRepository;
         this.appUserRepository = appUserRepository;
     }
 
@@ -38,59 +38,61 @@ public class ConfirmationTokenServiceImpl implements ConfirmationTokenService{
     @Transactional
     // used to verify if the confirmation token is valid, and if it is - enable user account
     public ResponseEntity<String> confirmToken(String token) {
-        ConfirmationToken confirmationToken = getConfirmationToken(token);
-        checkIfTokenAlreadySubmitted(confirmationToken);
-        checkIfTokenExpired(confirmationToken);
+        VerificationToken verificationToken = getConfirmationToken(token);
+        checkIfTokenAlreadySubmitted(verificationToken);
+        checkIfTokenExpired(verificationToken);
 
-        AppUser appUser = getAppUser(confirmationToken);
-        updateConfirmationToken(confirmationToken);
+        AppUser appUser = getAppUser(verificationToken);
+        updateConfirmationToken(verificationToken);
         enableUserAccount(appUser);
 
         return ResponseEntity.ok("Email has been successfully confirmed");
     }
 
-    public String generateConfirmationToken(AppUser newUser) {
+    public String generateVerificationToken(AppUser newUser) {
         String token = UUID.randomUUID().toString();
 
-        ConfirmationToken confirmationToken = new ConfirmationToken(
+        VerificationToken verificationToken = new VerificationToken(
                 token,
                 LocalDateTime.now(),
                 LocalDateTime.now().plusSeconds(confirmationTokenExpiresIn), // confirmation token will be valid for 15 minutes
                 newUser
         );
-        confirmationTokenRepository.save(confirmationToken);
+
+
+        verificationTokenRepository.save(verificationToken);
         return token;
     }
 
 
-    private ConfirmationToken getConfirmationToken(String token) {
-        return confirmationTokenRepository.findByToken(token)
+    private VerificationToken getConfirmationToken(String token) {
+        return verificationTokenRepository.findByToken(token)
                 .orElseThrow(() -> new InvalidTokenException("Confirmation token not found"));
     }
 
-    private void checkIfTokenAlreadySubmitted(ConfirmationToken confirmationToken) {
-        if (confirmationToken.getConfirmedAt() != null) {
+    private void checkIfTokenAlreadySubmitted(VerificationToken verificationToken) {
+        if (verificationToken.getConfirmedAt() != null) {
             throw new InvalidTokenException("Confirmation token was already submitted");
         }
     }
 
-    private void checkIfTokenExpired(ConfirmationToken confirmationToken) {
-        if (LocalDateTime.now().isAfter(confirmationToken.getExpiresAt())) {
+    private void checkIfTokenExpired(VerificationToken verificationToken) {
+        if (LocalDateTime.now().isAfter(verificationToken.getExpiresAt())) {
             throw new InvalidTokenException("Confirmation token has expired");
         }
     }
 
-    private AppUser getAppUser(ConfirmationToken confirmationToken) {
-        return appUserRepository.findByEmail(confirmationToken.getAppUser().getUsername())
+    private AppUser getAppUser(VerificationToken verificationToken) {
+        return appUserRepository.findByEmail(verificationToken.getAppUser().getUsername())
                 .orElseThrow(() -> new InvalidTokenException("There is no user associated with this confirmation token"));
     }
 
-    private void updateConfirmationToken(ConfirmationToken confirmationToken) {
-        confirmationToken.setConfirmedAt(LocalDateTime.now());
+    private void updateConfirmationToken(VerificationToken verificationToken) {
+        verificationToken.setConfirmedAt(LocalDateTime.now());
     }
 
     private void enableUserAccount(AppUser appUser) {
-        appUser.setIsEnabled(true);
+        appUser.setEnabled(true);
     }
 
 

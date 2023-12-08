@@ -11,6 +11,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.UUID;
+
 @Service
 public class RegistrationServiceImpl implements RegistrationService{
     private final AppUserRepository appUserRepository;
@@ -32,7 +34,7 @@ public class RegistrationServiceImpl implements RegistrationService{
     }
 
     @Transactional
-    public ResponseEntity<Integer> register(AppUserDTO appUserDTO) {
+    public ResponseEntity<UUID> register(AppUserDTO appUserDTO) {
 
         // used to validatePassword the password
         passwordValidatorImpl.validatePassword(appUserDTO.password());
@@ -41,20 +43,20 @@ public class RegistrationServiceImpl implements RegistrationService{
         AppUser createdUser = createAppUserFromAppUserDTO(appUserDTO);
 
         // Saves newly created user and used to extract user id which will be returned in ResponseEntity
-        Integer userId = appUserRepository.saveAndFlush(createdUser).getId();
+        UUID userId = appUserRepository.saveAndFlush(createdUser).getId();
 
         // used to send verification email
         
         //TODO: HANDLE IT IN AOP WAY
         emailService.sendVerificationEmail(createdUser);
 
-        return ResponseEntity.status(HttpStatus.CREATED)
-                .body(userId);
+        return ResponseEntity.status(HttpStatus.CREATED).body(userId);
     }
 
 
     private AppUser createAppUserFromAppUserDTO(AppUserDTO appUserDTO) {
         String encodedPassword = encodePassword(appUserDTO.password());
+
         return new AppUser(
                 appUserDTO.email(),
                 appUserDTO.firstName(),
@@ -62,6 +64,7 @@ public class RegistrationServiceImpl implements RegistrationService{
                 encodedPassword,
                 appUserDTO.userRole()
         );
+
     }
     private String encodePassword(String rawPassword) {
         return passwordEncoder.encode(rawPassword);

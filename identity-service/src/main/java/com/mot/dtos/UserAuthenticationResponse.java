@@ -1,11 +1,13 @@
 package com.mot.dtos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Builder;
 
 
 import java.util.UUID;
 
 
+@Builder
 public record UserAuthenticationResponse(
         @JsonProperty("access_token")
         String accessToken,
