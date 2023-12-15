@@ -34,7 +34,7 @@ public class RegistrationServiceImpl implements RegistrationService{
     }
 
     @Transactional
-    public ResponseEntity<UUID> register(AppUserDTO appUserDTO) {
+    public ResponseEntity<UUID> signUp(AppUserDTO appUserDTO) {
 
         // used to validatePassword the password
         passwordValidatorImpl.validatePassword(appUserDTO.password());

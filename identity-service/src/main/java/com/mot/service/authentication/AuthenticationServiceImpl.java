@@ -2,7 +2,7 @@ package com.mot.service.authentication;
 import com.mot.model.AppUser;
 import com.mot.dtos.UserAuthenticationRequest;
 import com.mot.dtos.UserAuthenticationResponse;
-import com.mot.model.RefreshToken;
+import com.mot.model.token.RefreshToken;
 import com.mot.repository.RefreshTokenRepository;
 import com.mot.util.jwt.JwtUtil;
 import org.springframework.beans.factory.annotation.Value;

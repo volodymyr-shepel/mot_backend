@@ -22,6 +22,10 @@ public class AccountController {
     public ResponseEntity<String> forgetPassword(@RequestBody EmailAddressDTO emailAddressDTO){
         return accountService.forgetPassword(emailAddressDTO);
     }
+    @GetMapping(path = "/activate")
+    public ResponseEntity<String> activateAccount(@RequestParam("token") String token) {
+        return accountService.activateAccount(token);
+    }
     @GetMapping(path = "/reset-password")
     public String resetPassword(@RequestParam("token") String token){
         // TODO: verify token and redirect the user to the forgetPassword form

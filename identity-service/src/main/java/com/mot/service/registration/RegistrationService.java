@@ -6,5 +6,5 @@ import org.springframework.http.ResponseEntity;
 import java.util.UUID;
 
 public interface RegistrationService {
-    ResponseEntity<UUID> register(AppUserDTO appUserDTO);
+    ResponseEntity<UUID> signUp(AppUserDTO appUserDTO);
 }

@@ -58,7 +58,7 @@ public class VerificationEmailService {
     }
 
     private String generateVerificationLink(String token) {
-        return  baseUrl + "/api/auth/email/confirm?token=" + token;
+        return  baseUrl + "/api/auth/account/activate?token=" + token;
     }
 
     private void checkIfUserIsEnabled(AppUser appUser) {

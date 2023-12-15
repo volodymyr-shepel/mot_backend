@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 
 
 public interface EmailService {
-    ResponseEntity<String> confirmEmail(String token);
+
     ResponseEntity<String> resendVerificationEmail(EmailAddressDTO emailAddressDTO);
 
     void sendEmail(NotificationDTO notification);

@@ -12,7 +12,6 @@ import java.util.UUID;
 @RestController
 @RequestMapping(path = "/api/auth/token")
 public class TokenController {
-
     private final RefreshTokenService refreshTokenServiceImpl;
 
     public TokenController(RefreshTokenService refreshTokenServiceImpl) {

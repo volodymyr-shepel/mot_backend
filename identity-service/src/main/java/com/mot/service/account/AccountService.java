@@ -3,9 +3,8 @@ package com.mot.service.account;
 import com.mot.dtos.EmailAddressDTO;
 import com.mot.dtos.UpdatePasswordDTO;
 import com.mot.exception.InvalidTokenException;
-import com.mot.exception.UserNotFoundException;
 import com.mot.model.AppUser;
-import com.mot.model.VerificationToken;
+import com.mot.model.token.VerificationToken;
 import com.mot.repository.AppUserRepository;
 import com.mot.repository.VerificationTokenRepository;
 import com.mot.service.email.EmailService;
@@ -45,7 +44,7 @@ public class AccountService {
     @Transactional
     public ResponseEntity<String> forgetPassword(EmailAddressDTO emailAddressDTO) {
         String email = emailAddressDTO.email();
-        AppUser user = getAppUserByEmail(email);
+        AppUser user = appUserRepository.getAppUserByEmailOrThrowUserNotFoundException(email);
         verificationTokenServiceImpl.generateVerificationToken(user);
         emailServiceImpl.sendForgetPasswordEmail(user);
         return ResponseEntity.ok("Forget Password Email was sent successfully");
@@ -54,56 +53,32 @@ public class AccountService {
 
     @Transactional
     public ResponseEntity<String> updatePassword(UpdatePasswordDTO updatePasswordDTO) {
-        String password = updatePasswordDTO.password();
-        String verificationToken = updatePasswordDTO.verificationToken();;
+        String providedPassword = updatePasswordDTO.password();
 
-        VerificationToken token = getConfirmationToken(verificationToken);
-        checkIfTokenAlreadySubmitted(token);
-        checkIfTokenExpired(token);
+        String providedVerificationToken = updatePasswordDTO.verificationToken();
 
-        AppUser appUser = getAppUser(token);
-        // validate if the new password satisfy all security requirements
-        passwordValidatorImpl.validatePassword(password);
+        VerificationToken verificationToken = verificationTokenRepository.getVerificationTokenOrThrowAnException(providedVerificationToken);
 
-        // update password
-        appUser.setPassword(encodePassword(password));
+        verificationToken.validateToken();
 
-        updateVerificationToken(token);
+        String extractedEmail = verificationToken.extractEmailFromToken();
+
+        AppUser appUser = appUserRepository.getAppUserByEmailOrThrowUserNotFoundException(extractedEmail);
+
+        passwordValidatorImpl.validatePassword(providedPassword);
+
+        appUser.setPassword(encodePassword(providedPassword));
+
+        verificationToken.setConfirmedAt(LocalDateTime.now());
 
         return ResponseEntity.ok("Password was updated successfully");
     }
 
-
-    private AppUser getAppUserByEmail(String email) {
-        return appUserRepository.findByEmail(email)
-                .orElseThrow(() -> new UserNotFoundException("There is no such user"));
+    public ResponseEntity<String> activateAccount(String token) {
+        return verificationTokenServiceImpl.confirmToken(token);
     }
 
-    private VerificationToken getConfirmationToken(String token) {
-        return verificationTokenRepository.findByToken(token)
-                .orElseThrow(() -> new InvalidTokenException("Confirmation token not found"));
-    }
 
-    private void checkIfTokenAlreadySubmitted(VerificationToken verificationToken) {
-        if (verificationToken.getConfirmedAt() != null) {
-            throw new InvalidTokenException("Confirmation token was already submitted");
-        }
-    }
-
-    private void checkIfTokenExpired(VerificationToken verificationToken) {
-        if (LocalDateTime.now().isAfter(verificationToken.getExpiresAt())) {
-            throw new InvalidTokenException("Confirmation token has expired");
-        }
-    }
-
-    private AppUser getAppUser(VerificationToken verificationToken) {
-        return appUserRepository.findByEmail(verificationToken.getAppUser().getUsername())
-                .orElseThrow(() -> new InvalidTokenException("There is no user associated with this confirmation token"));
-    }
-
-    private void updateVerificationToken(VerificationToken verificationToken) {
-        verificationToken.setConfirmedAt(LocalDateTime.now());
-    }
 
     private String encodePassword(String rawPassword) {
         return passwordEncoder.encode(rawPassword);
