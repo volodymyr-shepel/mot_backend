@@ -36,7 +36,6 @@ public class VerificationTokenServiceImpl implements VerificationTokenService {
 
 
     @Transactional
-    // used to verify if the confirmation token is valid, and if it is - enable user account
     public ResponseEntity<String> confirmToken(String token) {
 
         VerificationToken verificationToken = verificationTokenRepository.getVerificationTokenOrThrowAnException(token);

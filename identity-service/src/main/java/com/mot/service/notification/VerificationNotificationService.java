@@ -1,10 +1,12 @@
-package com.mot.service.email;
+package com.mot.service.notification;
 
+import com.mot.amqp.RabbitMQMessageProducer;
+import com.mot.dtos.NotificationDTO;
+import com.mot.enums.NotificationType;
 import com.mot.model.AppUser;
 import com.mot.repository.VerificationTokenRepository;
 import com.mot.service.verificationToken.VerificationTokenService;
-import com.mot.dtos.NotificationDTO;
-import com.mot.enums.NotificationType;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -12,38 +14,44 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 
 @Service
-public class VerificationEmailService {
+public class VerificationNotificationService extends NotificationService{
 
     @Value("${app.base-url}")
     private String baseUrl;
 
     @Value("${app.config.verification-email-subject}")
-    private String verificationEmailSubject;
+    private String emailSubject;
+
+    private final NotificationType notificationType = NotificationType.EMAIL_VERIFICATION;
+
 
     private final VerificationTokenService verificationTokenServiceImpl;
 
+
     private final VerificationTokenRepository verificationTokenRepository;
 
-
-    public VerificationEmailService(VerificationTokenService verificationTokenServiceImpl, VerificationTokenRepository verificationTokenRepository) {
+    public VerificationNotificationService(
+            RabbitMQMessageProducer rabbitMQMessageProducer,
+            VerificationTokenService verificationTokenServiceImpl,
+            VerificationTokenRepository verificationTokenRepository) {
+        super(rabbitMQMessageProducer);
         this.verificationTokenServiceImpl = verificationTokenServiceImpl;
         this.verificationTokenRepository = verificationTokenRepository;
     }
 
-    public NotificationDTO buildNotificationDTO(AppUser appUser){ // build notification dto for verification email
+    public void sendVerificationNotification(AppUser appUser){
+        NotificationDTO notificationDTO = buildNotificationDTO(appUser);
+        publishNotification(notificationDTO);
+    }
+
+    public NotificationDTO buildNotificationDTO(AppUser appUser){
         return NotificationDTO.builder()
                 .recipient(appUser.getUsername())
-                .subject(verificationEmailSubject)
-                .notificationType(NotificationType.EMAIL_VERIFICATION)
+                .subject(emailSubject)
+                .notificationType(notificationType)
                 .notificationFields(generateVerificationEmailFields(appUser))
                 .build();
     }
-
-    public void verifyEmailForResend(AppUser appUser){
-        checkIfUserIsEnabled(appUser);
-        checkIfVerificationEmailIsActive(appUser);
-    }
-
 
     private HashMap<String,String> generateVerificationEmailFields(AppUser appUser){
         String token = verificationTokenServiceImpl.generateVerificationToken(appUser);
@@ -58,8 +66,14 @@ public class VerificationEmailService {
     }
 
     private String generateVerificationLink(String token) {
-        return  baseUrl + "/api/auth/account/activate?token=" + token;
+        return  baseUrl + "/api/auth/account/v1/activate?token=" + token;
     }
+
+    public void verifyEmailForResend(AppUser appUser){
+        checkIfUserIsEnabled(appUser);
+        checkIfVerificationEmailIsActive(appUser);
+    }
+
 
     private void checkIfUserIsEnabled(AppUser appUser) {
         if (appUser.isEnabled()) {
@@ -73,5 +87,6 @@ public class VerificationEmailService {
                     " Verify it or try again in 15 minutes");
         }
     }
+
 
 }

@@ -1,5 +1,6 @@
-package com.mot.service.email;
+package com.mot.service.notification;
 
+import com.mot.amqp.RabbitMQMessageProducer;
 import com.mot.dtos.NotificationDTO;
 import com.mot.enums.NotificationType;
 import com.mot.model.AppUser;
@@ -10,29 +11,38 @@ import org.springframework.stereotype.Service;
 import java.util.HashMap;
 
 @Service
-public class ResetPasswordEmailService {
+public class ResetPasswordNotificationService extends NotificationService{
 
     @Value("${app.base-url}")
     private String baseUrl;
 
     @Value("${app.config.forget-password-email-subject}")
-    private String resetPasswordEmailSubject;
+    private String emailSubject;
 
     private final VerificationTokenService verificationTokenServiceImpl;
 
-    public ResetPasswordEmailService(VerificationTokenService verificationTokenServiceImpl) {
+    public ResetPasswordNotificationService(
+            RabbitMQMessageProducer rabbitMQMessageProducer,
+            VerificationTokenService verificationTokenServiceImpl) {
+        super(rabbitMQMessageProducer);
         this.verificationTokenServiceImpl = verificationTokenServiceImpl;
+
+    }
+    public void sendResetPasswordNotification(AppUser appUser){
+        NotificationDTO notificationDTO = buildNotificationDTO(appUser);
+        publishNotification(notificationDTO);
     }
 
-    public NotificationDTO buildNotificationDTO(AppUser appUser){ // build notification dto for verification email
+
+    public NotificationDTO buildNotificationDTO(AppUser appUser){
         return NotificationDTO.builder()
                 .recipient(appUser.getUsername())
-                .subject(resetPasswordEmailSubject)
+                .subject(emailSubject)
                 .notificationType(NotificationType.RESET_PASSWORD)
-                .notificationFields(generateResetPasswordEmailFields(appUser))
+                .notificationFields(generateNotificationFields(appUser))
                 .build();
     }
-    private HashMap<String,String> generateResetPasswordEmailFields(AppUser appUser){
+    private HashMap<String,String> generateNotificationFields(AppUser appUser){
         String token = verificationTokenServiceImpl.generateVerificationToken(appUser);
         String verificationLink = generateVerificationLink(token);
 
@@ -44,6 +54,6 @@ public class ResetPasswordEmailService {
         }};
     }
     private String generateVerificationLink(String token) {
-        return  baseUrl + "/api/auth/account/reset-password?token=" + token;
+        return  baseUrl + "/api/auth/account/v1/reset-password?token=" + token;
     }
 }

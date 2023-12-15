@@ -12,7 +12,6 @@ public class AppUserDetailsService implements UserDetailsService {
 
     private final AppUserRepository appUserRepository;
 
-
     @Autowired
     public AppUserDetailsService(AppUserRepository appUserRepository) {
         this.appUserRepository = appUserRepository;

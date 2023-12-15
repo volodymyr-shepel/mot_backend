@@ -1,5 +1,6 @@
-package com.mot.controller;
+package com.mot.controller.auth;
 
+import com.mot.controller.auth.AuthController;
 import com.mot.dtos.AppUserDTO;
 import com.mot.dtos.UserAuthenticationRequest;
 import com.mot.dtos.UserAuthenticationResponse;
@@ -11,29 +12,24 @@ import org.springframework.web.bind.annotation.*;
 import java.util.UUID;
 
 @RestController
-@RequestMapping(path = "/api/auth/user")
-public class AuthController {
+@RequestMapping(path = "/api/auth/user/v1")
+public class AuthControllerImpl implements AuthController {
     private final RegistrationService registrationServiceImpl;
     private final AuthenticationService authenticationServiceImpl;
 
-    public AuthController(RegistrationService registrationServiceImpl,
-                          AuthenticationService authenticationServiceImpl) {
+    public AuthControllerImpl(RegistrationService registrationServiceImpl,
+                              AuthenticationService authenticationServiceImpl) {
         this.registrationServiceImpl = registrationServiceImpl;
         this.authenticationServiceImpl = authenticationServiceImpl;
     }
-    @PostMapping(path = "/signUp")
+    @Override
     public ResponseEntity<UUID> signUp(@RequestBody AppUserDTO appUserDTO){
         return registrationServiceImpl.signUp(appUserDTO);
     }
 
-
-    @PostMapping(path = "/signIn")
+    @Override
     public ResponseEntity<UserAuthenticationResponse> authenticate(@RequestBody UserAuthenticationRequest userAuthenticationRequest){
         return authenticationServiceImpl.authenticate(userAuthenticationRequest);
     }
-
-
-
-
 
 }

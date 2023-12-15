@@ -3,35 +3,33 @@ package com.mot.service.registration;
 import com.mot.model.AppUser;
 import com.mot.repository.AppUserRepository;
 import com.mot.dtos.AppUserDTO;
-import com.mot.service.email.EmailService;
+import com.mot.service.notification.VerificationNotificationService;
 import com.mot.util.passwordValidator.PasswordValidator;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.UUID;
 
 @Service
 public class RegistrationServiceImpl implements RegistrationService{
     private final AppUserRepository appUserRepository;
     private final PasswordEncoder passwordEncoder;
-    private final EmailService emailService;
+
+    private final VerificationNotificationService verificationNotificationService;
+
+    public RegistrationServiceImpl(AppUserRepository appUserRepository, PasswordEncoder passwordEncoder, VerificationNotificationService verificationNotificationService, PasswordValidator passwordValidatorImpl) {
+        this.appUserRepository = appUserRepository;
+        this.passwordEncoder = passwordEncoder;
+        this.verificationNotificationService = verificationNotificationService;
+        this.passwordValidatorImpl = passwordValidatorImpl;
+    }
 
     private final PasswordValidator passwordValidatorImpl;
 
 
-    public RegistrationServiceImpl(
-            AppUserRepository appUserRepository,
-            PasswordEncoder passwordEncoder,
-            EmailService emailService,
-            PasswordValidator passwordValidatorImpl) {
-        this.appUserRepository = appUserRepository;
-        this.passwordEncoder = passwordEncoder;
-        this.emailService = emailService;
-        this.passwordValidatorImpl = passwordValidatorImpl;
-    }
+
 
     @Transactional
     public ResponseEntity<UUID> signUp(AppUserDTO appUserDTO) {
@@ -45,10 +43,8 @@ public class RegistrationServiceImpl implements RegistrationService{
         // Saves newly created user and used to extract user id which will be returned in ResponseEntity
         UUID userId = appUserRepository.saveAndFlush(createdUser).getId();
 
-        // used to send verification email
-        
-        //TODO: HANDLE IT IN AOP WAY
-        emailService.sendVerificationEmail(createdUser);
+
+        verificationNotificationService.sendVerificationNotification(createdUser);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(userId);
     }
