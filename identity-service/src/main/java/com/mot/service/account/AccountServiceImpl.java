@@ -99,6 +99,17 @@ public class AccountServiceImpl implements AccountService{
     }
 
 
+    public ResponseEntity<String> resetPassword(String token) {
+        VerificationToken verificationToken = verificationTokenRepository.
+                getVerificationTokenOrThrowAnException(token);
+
+        verificationToken.validateToken();
+
+        return ResponseEntity.ok("Token was successfully verified");
+    }
+
+
+
 
     private String encodePassword(String rawPassword) {
         return passwordEncoder.encode(rawPassword);

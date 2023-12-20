@@ -23,9 +23,8 @@ public class AccountControllerImpl implements AccountController{
         return accountServiceImpl.activateAccount(token);
     }
     @Override
-    public String resetPassword(@RequestParam("token") String token){
-        // TODO: verify token and redirect the user to the forgetPassword form
-        return "Token verified and user redirected to the page";
+    public ResponseEntity<String> resetPassword(@RequestParam("token") String token){
+        return accountServiceImpl.resetPassword(token);
     }
     @Override
     public ResponseEntity<String> updatePassword(@RequestBody UpdatePasswordDTO updatePasswordDTO){

@@ -14,7 +14,7 @@ public interface AccountController {
     ResponseEntity<String> activateAccount(@RequestParam("token") String token);
 
     @GetMapping(path = "/reset-password")
-    String resetPassword(@RequestParam("token") String token);
+    ResponseEntity<String> resetPassword(@RequestParam("token") String token);
 
     @PutMapping(path = "/reset-password/update")
     ResponseEntity<String> updatePassword(@RequestBody UpdatePasswordDTO updatePasswordDTO);
