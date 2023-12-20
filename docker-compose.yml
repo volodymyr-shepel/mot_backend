@@ -27,7 +27,21 @@ services:
     ports:
       - "5441:5432"
     volumes:
-      - identity_service_data:/var/lib/postgresql/data
+      - notification_service_data:/var/lib/postgresql/data
+    networks:
+      - mot
+
+  postgres-product:
+    image: postgres:16.1
+    container_name: mot_product_postgres
+    environment:
+      POSTGRES_DB: product
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: root
+    ports:
+      - "5442:5432"
+    volumes:
+      - product_service_data:/var/lib/postgresql/data
     networks:
       - mot
   #pgadmin4
@@ -43,13 +57,6 @@ services:
     networks:
       - mot
 
-  zipkin:
-    image: openzipkin/zipkin
-    container_name: mot_zipkin
-    ports:
-      - "9411:9411"
-    networks:
-      - mot
 
   rabbitmq:
     image: rabbitmq:3.12.9-management
@@ -72,9 +79,6 @@ services:
       - mot
 
 
-
-
-
   consul:
     image: consul:1.15.4
     container_name: mot_consul
@@ -91,3 +95,5 @@ networks:
 
 volumes:
   identity_service_data:
+  notification_service_data:
+  product_service_data:

@@ -21,6 +21,7 @@
 		<module>notification-service</module>
 		<module>identity-service</module>
         <module>amqp</module>
+        <module>product-service</module>
 
     </modules>
     <properties>
@@ -89,6 +90,12 @@
 				<artifactId>jjwt-jackson</artifactId>
 				<version>${jsonwebtoken.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>org.postgresql</groupId>
+				<artifactId>postgresql</artifactId>
+				<version>42.7.0</version>
+			</dependency>
+
 
 		</dependencies>
 	</dependencyManagement>
