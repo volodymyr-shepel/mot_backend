@@ -11,7 +11,7 @@ import java.util.UUID;
 public class ProductItem {
     @Id
     @GeneratedValue
-    private UUID productItemId;
+    private UUID Id;
 
     @ManyToOne
     @JoinColumn(name = "product_id")
@@ -25,7 +25,7 @@ public class ProductItem {
 
     private Integer QtyInStock;
 
-    private String productImage;
+    private String imagePath;
 
     private Float price;
 }

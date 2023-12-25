@@ -1,0 +1,662 @@
+{
+  "Podzespo\u0142y komputerowe": {
+    "CategoryId": 5,
+    "subcategories": [
+      {
+        "CategoryId": 89,
+        "NamePlural": "Dyski twarde HDD i SSD"
+      },
+      {
+        "CategoryId": 345,
+        "NamePlural": "Karty graficzne"
+      },
+      {
+        "CategoryId": 11,
+        "NamePlural": "Procesory"
+      },
+      {
+        "CategoryId": 14,
+        "NamePlural": "P\u0142yty g\u0142\u00f3wne"
+      },
+      {
+        "CategoryId": 388,
+        "NamePlural": "Obudowy komputerowe"
+      },
+      {
+        "CategoryId": 28,
+        "NamePlural": "Pami\u0119ci RAM"
+      },
+      {
+        "CategoryId": 2493,
+        "NamePlural": "Zasilacze komputerowe"
+      },
+      {
+        "CategoryId": 2599,
+        "NamePlural": "Ch\u0142odzenia komputerowe"
+      },
+      {
+        "CategoryId": 397,
+        "NamePlural": "Modding PC"
+      },
+      {
+        "CategoryId": 7,
+        "NamePlural": "Karty d\u017awi\u0119kowe"
+      },
+      {
+        "CategoryId": 2665,
+        "NamePlural": "Karty przechwytuj\u0105ce wideo"
+      },
+      {
+        "CategoryId": 455,
+        "NamePlural": "Karty sieciowe"
+      },
+      {
+        "CategoryId": 1461,
+        "NamePlural": "Nap\u0119dy optyczne"
+      },
+      {
+        "CategoryId": 2887,
+        "NamePlural": "Podzespo\u0142y serwerowe"
+      },
+      {
+        "CategoryId": 396,
+        "NamePlural": "Akcesoria do dysk\u00f3w"
+      }
+    ]
+  },
+  "Smarthome i lifestyle": {
+    "CategoryId": 64,
+    "subcategories": [
+      {
+        "CategoryId": 2406,
+        "NamePlural": "Inteligentny dom"
+      },
+      {
+        "CategoryId": 3027,
+        "NamePlural": "Drony i akcesoria"
+      },
+      {
+        "CategoryId": 2587,
+        "NamePlural": "Pojazdy elektryczne"
+      },
+      {
+        "CategoryId": 3467,
+        "NamePlural": "Zdrowie i ergonomia"
+      },
+      {
+        "CategoryId": 156,
+        "NamePlural": "Aparaty fotograficzne"
+      },
+      {
+        "CategoryId": 3028,
+        "NamePlural": "Akcesoria samochodowe"
+      },
+      {
+        "CategoryId": 3084,
+        "NamePlural": "Monitoring"
+      },
+      {
+        "CategoryId": 1936,
+        "NamePlural": "Obiektywy"
+      },
+      {
+        "CategoryId": 3026,
+        "NamePlural": "Kamery sportowe i akcesoria"
+      },
+      {
+        "CategoryId": 408,
+        "NamePlural": "Akcesoria foto-video"
+      },
+      {
+        "CategoryId": 1937,
+        "NamePlural": "Lampy b\u0142yskowe i studyjne"
+      },
+      {
+        "CategoryId": 1506,
+        "NamePlural": "Statywy i g\u0142owice"
+      },
+      {
+        "CategoryId": 2581,
+        "NamePlural": "Stabilizatory obrazu"
+      },
+      {
+        "CategoryId": 2488,
+        "NamePlural": "Wyposa\u017cenie studia"
+      },
+      {
+        "CategoryId": 1930,
+        "NamePlural": "Torby i pokrowce na aparat"
+      },
+      {
+        "CategoryId": 3117,
+        "NamePlural": "Akcesoria rowerowe"
+      },
+      {
+        "CategoryId": 3173,
+        "NamePlural": "Akcesoria motocyklowe"
+      },
+      {
+        "CategoryId": 2332,
+        "NamePlural": "Kamery cyfrowe"
+      },
+      {
+        "CategoryId": 3300,
+        "NamePlural": "Fotele do biura"
+      },
+      {
+        "CategoryId": 2384,
+        "NamePlural": "Konsole"
+      },
+      {
+        "CategoryId": 2652,
+        "NamePlural": "VR (Virtual Reality)"
+      },
+      {
+        "CategoryId": 1163,
+        "NamePlural": "Gry"
+      },
+      {
+        "CategoryId": 3030,
+        "NamePlural": "Gad\u017cety dla graczy"
+      },
+      {
+        "CategoryId": 3451,
+        "NamePlural": "Akcesoria do urz\u0105dze\u0144 smart"
+      }
+    ]
+  },
+  "Akcesoria": {
+    "CategoryId": 12,
+    "subcategories": [
+      {
+        "CategoryId": 46,
+        "NamePlural": "Kable i przej\u015bci\u00f3wki"
+      },
+      {
+        "CategoryId": 2464,
+        "NamePlural": "Zasilanie"
+      },
+      {
+        "CategoryId": 100,
+        "NamePlural": "No\u015bniki danych"
+      },
+      {
+        "CategoryId": 1215,
+        "NamePlural": "S\u0142uchawki"
+      },
+      {
+        "CategoryId": 31,
+        "NamePlural": "Myszki"
+      },
+      {
+        "CategoryId": 32,
+        "NamePlural": "Klawiatury"
+      },
+      {
+        "CategoryId": 1033,
+        "NamePlural": "Akcesoria do laptop\u00f3w"
+      },
+      {
+        "CategoryId": 161,
+        "NamePlural": "Akcesoria komputerowe"
+      },
+      {
+        "CategoryId": 1592,
+        "NamePlural": "Akcesoria GSM"
+      },
+      {
+        "CategoryId": 3341,
+        "NamePlural": "Dyski zewn\u0119trzne SSD"
+      },
+      {
+        "CategoryId": 439,
+        "NamePlural": "Dyski zewn\u0119trzne HDD"
+      },
+      {
+        "CategoryId": 583,
+        "NamePlural": "Czytniki kart pami\u0119ci"
+      },
+      {
+        "CategoryId": 7,
+        "NamePlural": "Karty d\u017awi\u0119kowe"
+      },
+      {
+        "CategoryId": 39,
+        "NamePlural": "\u015arodki czyszcz\u0105ce"
+      },
+      {
+        "CategoryId": 33,
+        "NamePlural": "G\u0142o\u015bniki"
+      },
+      {
+        "CategoryId": 2587,
+        "NamePlural": "Pojazdy elektryczne"
+      },
+      {
+        "CategoryId": 2745,
+        "NamePlural": "Podk\u0142adki do komputera"
+      },
+      {
+        "CategoryId": 48,
+        "NamePlural": "Listwy zasilaj\u0105ce"
+      },
+      {
+        "CategoryId": 396,
+        "NamePlural": "Akcesoria do dysk\u00f3w"
+      },
+      {
+        "CategoryId": 2567,
+        "NamePlural": "Urz\u0105dzenia biurowe"
+      },
+      {
+        "CategoryId": 3443,
+        "NamePlural": "Us\u0142ugi dodatkowe"
+      },
+      {
+        "CategoryId": 2987,
+        "NamePlural": "Gad\u017cety"
+      },
+      {
+        "CategoryId": 2737,
+        "NamePlural": "Narz\u0119dzia serwisowe i sieciowe"
+      },
+      {
+        "CategoryId": 2287,
+        "NamePlural": "Akcesoria do tablet\u00f3w"
+      },
+      {
+        "CategoryId": 408,
+        "NamePlural": "Akcesoria foto-video"
+      },
+      {
+        "CategoryId": 2086,
+        "NamePlural": "Akcesoria do monitor\u00f3w"
+      },
+      {
+        "CategoryId": 2528,
+        "NamePlural": "Akcesoria do telewizor\u00f3w"
+      },
+      {
+        "CategoryId": 2518,
+        "NamePlural": "Akcesoria do konsol"
+      },
+      {
+        "CategoryId": 2671,
+        "NamePlural": "Akcesoria do s\u0142uchawek"
+      },
+      {
+        "CategoryId": 2779,
+        "NamePlural": "Akcesoria do myszek"
+      },
+      {
+        "CategoryId": 3375,
+        "NamePlural": "Akcesoria do klawiatur"
+      },
+      {
+        "CategoryId": 2345,
+        "NamePlural": "Akcesoria do kontroler\u00f3w"
+      },
+      {
+        "CategoryId": 3523,
+        "NamePlural": "Akcesoria do tablet\u00f3w graficznych"
+      },
+      {
+        "CategoryId": 133,
+        "NamePlural": "Pami\u0119ci flash"
+      }
+    ]
+  },
+  "Gaming i streaming": {
+    "CategoryId": 7,
+    "subcategories": [
+      {
+        "CategoryId": 2382,
+        "NamePlural": "Laptopy do gier"
+      },
+      {
+        "CategoryId": 2370,
+        "NamePlural": "Komputery do gier"
+      },
+      {
+        "CategoryId": 2372,
+        "NamePlural": "Podzespo\u0142y do gier"
+      },
+      {
+        "CategoryId": 2384,
+        "NamePlural": "Konsole"
+      },
+      {
+        "CategoryId": 2518,
+        "NamePlural": "Akcesoria do konsol"
+      },
+      {
+        "CategoryId": 2380,
+        "NamePlural": "Myszki i klawiatury dla graczy"
+      },
+      {
+        "CategoryId": 1163,
+        "NamePlural": "Gry"
+      },
+      {
+        "CategoryId": 2652,
+        "NamePlural": "VR (Virtual Reality)"
+      },
+      {
+        "CategoryId": 2934,
+        "NamePlural": "Urz\u0105dzenia do streamingu"
+      },
+      {
+        "CategoryId": 3466,
+        "NamePlural": "Meble gamingowe"
+      },
+      {
+        "CategoryId": 2371,
+        "NamePlural": "Monitory dla graczy"
+      },
+      {
+        "CategoryId": 3030,
+        "NamePlural": "Gad\u017cety dla graczy"
+      },
+      {
+        "CategoryId": 2381,
+        "NamePlural": "Audio dla graczy"
+      },
+      {
+        "CategoryId": 2383,
+        "NamePlural": "Tablety dla graczy"
+      },
+      {
+        "CategoryId": 392,
+        "NamePlural": "Kontrolery do gier"
+      },
+      {
+        "CategoryId": 2385,
+        "NamePlural": "Plecaki dla graczy"
+      },
+      {
+        "CategoryId": 3356,
+        "NamePlural": "Karty pami\u0119ci do konsol"
+      },
+      {
+        "CategoryId": 2438,
+        "NamePlural": "Fotele dla graczy"
+      },
+      {
+        "CategoryId": 3590,
+        "NamePlural": "Symulatory lot\u00f3w"
+      },
+      {
+        "CategoryId": 3591,
+        "NamePlural": "Symulatory jazdy"
+      }
+    ]
+  },
+  "Urz\u0105dzenia peryferyjne": {
+    "CategoryId": 6,
+    "subcategories": [
+      {
+        "CategoryId": 15,
+        "NamePlural": "Monitory"
+      },
+      {
+        "CategoryId": 6,
+        "NamePlural": "Drukarki"
+      },
+      {
+        "CategoryId": 4051,
+        "NamePlural": "Drukarki ze skanerem"
+      },
+      {
+        "CategoryId": 421,
+        "NamePlural": "Urz\u0105dzenia sieciowe"
+      },
+      {
+        "CategoryId": 31,
+        "NamePlural": "Myszki"
+      },
+      {
+        "CategoryId": 32,
+        "NamePlural": "Klawiatury"
+      },
+      {
+        "CategoryId": 1215,
+        "NamePlural": "S\u0142uchawki"
+      },
+      {
+        "CategoryId": 33,
+        "NamePlural": "G\u0142o\u015bniki"
+      },
+      {
+        "CategoryId": 3093,
+        "NamePlural": "Mikrofony i akcesoria"
+      },
+      {
+        "CategoryId": 297,
+        "NamePlural": "Tablety graficzne"
+      },
+      {
+        "CategoryId": 375,
+        "NamePlural": "Projektory i ekrany"
+      },
+      {
+        "CategoryId": 2745,
+        "NamePlural": "Podk\u0142adki do komputera"
+      },
+      {
+        "CategoryId": 2537,
+        "NamePlural": "Zasilacze UPS i stabilizatory"
+      },
+      {
+        "CategoryId": 2089,
+        "NamePlural": "Materia\u0142y eksploatacyjne"
+      },
+      {
+        "CategoryId": 23,
+        "NamePlural": "Skanery"
+      },
+      {
+        "CategoryId": 109,
+        "NamePlural": "Kamery"
+      },
+      {
+        "CategoryId": 3624,
+        "NamePlural": "Sprz\u0119t do wideokonferencji"
+      },
+      {
+        "CategoryId": 2567,
+        "NamePlural": "Urz\u0105dzenia biurowe"
+      },
+      {
+        "CategoryId": 1387,
+        "NamePlural": "Piloty i manipulatory"
+      },
+      {
+        "CategoryId": 2086,
+        "NamePlural": "Akcesoria do monitor\u00f3w"
+      },
+      {
+        "CategoryId": 3523,
+        "NamePlural": "Akcesoria do tablet\u00f3w graficznych"
+      }
+    ]
+  },
+  "Smartfony i smartwatche": {
+    "CategoryId": 4,
+    "subcategories": [
+      {
+        "CategoryId": 1590,
+        "NamePlural": "Smartfony i telefony"
+      },
+      {
+        "CategoryId": 1663,
+        "NamePlural": "Tablety"
+      },
+      {
+        "CategoryId": 1924,
+        "NamePlural": "Inteligentne zegarki"
+      },
+      {
+        "CategoryId": 2519,
+        "NamePlural": "Czytniki ebook"
+      },
+      {
+        "CategoryId": 3464,
+        "NamePlural": "Ochrona na telefon"
+      },
+      {
+        "CategoryId": 3465,
+        "NamePlural": "\u0141adowarki i powerbanki"
+      },
+      {
+        "CategoryId": 979,
+        "NamePlural": "Karty pami\u0119ci microSD"
+      },
+      {
+        "CategoryId": 2748,
+        "NamePlural": "S\u0142uchawki True Wireless"
+      },
+      {
+        "CategoryId": 1592,
+        "NamePlural": "Akcesoria GSM"
+      },
+      {
+        "CategoryId": 2287,
+        "NamePlural": "Akcesoria do tablet\u00f3w"
+      },
+      {
+        "CategoryId": 133,
+        "NamePlural": "Pami\u0119ci flash"
+      }
+    ]
+  },
+  "Laptopy i komputery": {
+    "CategoryId": 2,
+    "subcategories": [
+      {
+        "CategoryId": 159,
+        "NamePlural": "Laptopy/Notebooki/Ultrabooki"
+      },
+      {
+        "CategoryId": 2158,
+        "NamePlural": "Laptopy 2 w 1"
+      },
+      {
+        "CategoryId": 3524,
+        "NamePlural": "Laptopy biznesowe"
+      },
+      {
+        "CategoryId": 175,
+        "NamePlural": "Komputery stacjonarne"
+      },
+      {
+        "CategoryId": 3041,
+        "NamePlural": "Komputery G4M3R"
+      },
+      {
+        "CategoryId": 1663,
+        "NamePlural": "Tablety"
+      },
+      {
+        "CategoryId": 3309,
+        "NamePlural": "Serwery i storage"
+      },
+      {
+        "CategoryId": 49,
+        "NamePlural": "Programy"
+      },
+      {
+        "CategoryId": 161,
+        "NamePlural": "Akcesoria komputerowe"
+      },
+      {
+        "CategoryId": 1033,
+        "NamePlural": "Akcesoria do laptop\u00f3w"
+      },
+      {
+        "CategoryId": 172,
+        "NamePlural": "Torby i etui"
+      },
+      {
+        "CategoryId": 1173,
+        "NamePlural": "Stacje dokuj\u0105ce do laptop\u00f3w"
+      }
+    ]
+  },
+  "TV i audio": {
+    "CategoryId": 8,
+    "subcategories": [
+      {
+        "CategoryId": 1117,
+        "NamePlural": "Telewizory"
+      },
+      {
+        "CategoryId": 3442,
+        "NamePlural": "Soundbary"
+      },
+      {
+        "CategoryId": 1879,
+        "NamePlural": "Kino domowe"
+      },
+      {
+        "CategoryId": 375,
+        "NamePlural": "Projektory i ekrany"
+      },
+      {
+        "CategoryId": 2636,
+        "NamePlural": "Hi-Fi audio"
+      },
+      {
+        "CategoryId": 2948,
+        "NamePlural": "Kolumny g\u0142o\u015bnikowe"
+      },
+      {
+        "CategoryId": 33,
+        "NamePlural": "G\u0142o\u015bniki"
+      },
+      {
+        "CategoryId": 1215,
+        "NamePlural": "S\u0142uchawki"
+      },
+      {
+        "CategoryId": 3093,
+        "NamePlural": "Mikrofony i akcesoria"
+      },
+      {
+        "CategoryId": 1425,
+        "NamePlural": "Odtwarzacze multimedialne"
+      },
+      {
+        "CategoryId": 1885,
+        "NamePlural": "Przeno\u015bny sprz\u0119t audio"
+      },
+      {
+        "CategoryId": 7,
+        "NamePlural": "Karty d\u017awi\u0119kowe"
+      },
+      {
+        "CategoryId": 2642,
+        "NamePlural": "Power Audio"
+      },
+      {
+        "CategoryId": 2528,
+        "NamePlural": "Akcesoria do telewizor\u00f3w"
+      },
+      {
+        "CategoryId": 2671,
+        "NamePlural": "Akcesoria do s\u0142uchawek"
+      },
+      {
+        "CategoryId": 3478,
+        "NamePlural": "Sprz\u0119t DJ"
+      },
+      {
+        "CategoryId": 1876,
+        "NamePlural": "Tunery do TV"
+      },
+      {
+        "CategoryId": 1877,
+        "NamePlural": "Anteny DVB-T"
+      }
+    ]
+  }
+}

@@ -55,6 +55,7 @@ public class VerificationTokenServiceImpl implements VerificationTokenService {
 
     public String generateVerificationToken(AppUser newUser) {
         String token = UUID.randomUUID().toString();
+
         VerificationToken verificationToken = new VerificationToken(
                 token,
                 LocalDateTime.now(),

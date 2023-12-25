@@ -1,10 +1,13 @@
 package com.mot.service.authentication;
+import com.mot.dtos.CredentialsDTO;
 import com.mot.model.AppUser;
 import com.mot.dtos.UserAuthenticationRequest;
 import com.mot.dtos.UserAuthenticationResponse;
 import com.mot.model.token.RefreshToken;
+import com.mot.repository.AppUserRepository;
 import com.mot.repository.RefreshTokenRepository;
 import com.mot.util.jwt.JwtUtil;
+import com.mot.util.passwordValidator.PasswordValidator;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -18,6 +21,10 @@ import java.util.UUID;
 @Service
 public class AuthenticationServiceImpl implements AuthenticationService{
     private final AuthenticationManager authenticationManager;
+
+    private final AppUserRepository appUserRepository;
+
+    private final PasswordValidator passwordValidator;
     private final RefreshTokenRepository refreshTokenRepository;
     private final JwtUtil jwtUtil;
 
@@ -28,9 +35,11 @@ public class AuthenticationServiceImpl implements AuthenticationService{
     private long refreshTokenExpiresIn; // the value is provided in seconds
 
     public AuthenticationServiceImpl(AuthenticationManager authenticationManager,
-                                     RefreshTokenRepository refreshTokenRepository,
+                                     AppUserRepository appUserRepository, PasswordValidator passwordValidator, RefreshTokenRepository refreshTokenRepository,
                                      JwtUtil jwtUtil) {
         this.authenticationManager = authenticationManager;
+        this.appUserRepository = appUserRepository;
+        this.passwordValidator = passwordValidator;
         this.refreshTokenRepository = refreshTokenRepository;
         this.jwtUtil = jwtUtil;
     }
@@ -62,6 +71,28 @@ public class AuthenticationServiceImpl implements AuthenticationService{
         );
 
     }
+
+    @Override
+    public ResponseEntity<String> validateCredentials(CredentialsDTO credentialsDTO) {
+        String email = credentialsDTO.email(); // Assuming you have a getEmail() method in your CredentialsDTO
+        String password = credentialsDTO.password();
+
+
+
+
+
+        if (appUserRepository.existsByEmail(email)) {
+            // User with the given email already exists, return Bad Request
+            return ResponseEntity.badRequest().body("User with this email already exists");
+        }
+
+        // If the user doesn't exist, continue with password validation
+        passwordValidator.validatePassword(password);
+
+        return ResponseEntity.ok("Credentials verified");
+    }
+
+
     private UUID saveRefreshToken(AppUser user){
         RefreshToken refreshToken = new RefreshToken(
                 LocalDateTime.now(),

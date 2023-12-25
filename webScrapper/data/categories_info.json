@@ -1,0 +1,1087 @@
+[
+    {
+        "Id": "89",
+        "FormattedName": "dyski-twarde-hdd-i-ssd",
+        "ParentGroupId": "5",
+        "NamePlural": "Dyski twarde HDD i SSD",
+        "CategoryUrl": "https://www.x-kom.pl/g-5/c/89-dyski-twarde-hdd-i-ssd.html"
+    },
+    {
+        "Id": "2406",
+        "FormattedName": "inteligentny-dom",
+        "ParentGroupId": "64",
+        "NamePlural": "Inteligentny dom",
+        "CategoryUrl": "https://www.x-kom.pl/g-64/c/2406-inteligentny-dom.html"
+    },
+    {
+        "Id": "46",
+        "FormattedName": "kable-i-przejsciowki",
+        "ParentGroupId": "12",
+        "NamePlural": "Kable i przejściówki",
+        "CategoryUrl": "https://www.x-kom.pl/g-12/c/46-kable-i-przejsciowki.html"
+    },
+    {
+        "Id": "2382",
+        "FormattedName": "laptopy-do-gier",
+        "ParentGroupId": "7",
+        "NamePlural": "Laptopy do gier",
+        "CategoryUrl": "https://www.x-kom.pl/g-7/c/2382-laptopy-do-gier.html"
+    },
+    {
+        "Id": "15",
+        "FormattedName": "monitory",
+        "ParentGroupId": "6",
+        "NamePlural": "Monitory",
+        "CategoryUrl": "https://www.x-kom.pl/g-6/c/15-monitory.html"
+    },
+    {
+        "Id": "345",
+        "FormattedName": "karty-graficzne",
+        "ParentGroupId": "5",
+        "NamePlural": "Karty graficzne",
+        "CategoryUrl": "https://www.x-kom.pl/g-5/c/345-karty-graficzne.html"
+    },
+    {
+        "Id": "2370",
+        "FormattedName": "komputery-do-gier",
+        "ParentGroupId": "7",
+        "NamePlural": "Komputery do gier",
+        "CategoryUrl": "https://www.x-kom.pl/g-7/c/2370-komputery-do-gier.html"
+    },
+    {
+        "Id": "1590",
+        "FormattedName": "smartfony-i-telefony",
+        "ParentGroupId": "4",
+        "NamePlural": "Smartfony i telefony",
+        "CategoryUrl": "https://www.x-kom.pl/g-4/c/1590-smartfony-i-telefony.html"
+    },
+    {
+        "Id": "2464",
+        "FormattedName": "zasilanie",
+        "ParentGroupId": "12",
+        "NamePlural": "Zasilanie",
+        "CategoryUrl": "https://www.x-kom.pl/g-12/c/2464-zasilanie.html"
+    },
+    {
+        "Id": "3027",
+        "FormattedName": "drony-i-akcesoria",
+        "ParentGroupId": "64",
+        "NamePlural": "Drony i akcesoria",
+        "CategoryUrl": "https://www.x-kom.pl/g-64/c/3027-drony-i-akcesoria.html"
+    },
+    {
+        "Id": "6",
+        "FormattedName": "drukarki",
+        "ParentGroupId": "6",
+        "NamePlural": "Drukarki",
+        "CategoryUrl": "https://www.x-kom.pl/g-6/c/6-drukarki.html"
+    },
+    {
+        "Id": "100",
+        "FormattedName": "nosniki-danych",
+        "ParentGroupId": "12",
+        "NamePlural": "Nośniki danych",
+        "CategoryUrl": "https://www.x-kom.pl/g-12/c/100-nosniki-danych.html"
+    },
+    {
+        "Id": "2372",
+        "FormattedName": "podzespoly-do-gier",
+        "ParentGroupId": "7",
+        "NamePlural": "Podzespoły do gier",
+        "CategoryUrl": "https://www.x-kom.pl/g-7/c/2372-podzespoly-do-gier.html"
+    },
+    {
+        "Id": "2384",
+        "FormattedName": "konsole",
+        "ParentGroupId": "7",
+        "NamePlural": "Konsole",
+        "CategoryUrl": "https://www.x-kom.pl/g-7/c/2384-konsole.html"
+    },
+    {
+        "Id": "159",
+        "FormattedName": "laptopy/notebooki/ultrabooki",
+        "ParentGroupId": "2",
+        "NamePlural": "Laptopy/Notebooki/Ultrabooki",
+        "CategoryUrl": "https://www.x-kom.pl/g-2/c/159-laptopy/notebooki/ultrabooki.html"
+    },
+    {
+        "Id": "2587",
+        "FormattedName": "pojazdy-elektryczne",
+        "ParentGroupId": "64",
+        "NamePlural": "Pojazdy elektryczne",
+        "CategoryUrl": "https://www.x-kom.pl/g-64/c/2587-pojazdy-elektryczne.html"
+    },
+    {
+        "Id": "1663",
+        "FormattedName": "tablety",
+        "ParentGroupId": "4",
+        "NamePlural": "Tablety",
+        "CategoryUrl": "https://www.x-kom.pl/g-4/c/1663-tablety.html"
+    },
+    {
+        "Id": "2518",
+        "FormattedName": "akcesoria-do-konsol",
+        "ParentGroupId": "7",
+        "NamePlural": "Akcesoria do konsol",
+        "CategoryUrl": "https://www.x-kom.pl/g-7/c/2518-akcesoria-do-konsol.html"
+    },
+    {
+        "Id": "4051",
+        "FormattedName": "drukarki-ze-skanerem",
+        "ParentGroupId": "6",
+        "NamePlural": "Drukarki ze skanerem",
+        "CategoryUrl": "https://www.x-kom.pl/g-6/c/4051-drukarki-ze-skanerem.html"
+    },
+    {
+        "Id": "1924",
+        "FormattedName": "inteligentne-zegarki",
+        "ParentGroupId": "4",
+        "NamePlural": "Inteligentne zegarki",
+        "CategoryUrl": "https://www.x-kom.pl/g-4/c/1924-inteligentne-zegarki.html"
+    },
+    {
+        "Id": "11",
+        "FormattedName": "procesory",
+        "ParentGroupId": "5",
+        "NamePlural": "Procesory",
+        "CategoryUrl": "https://www.x-kom.pl/g-5/c/11-procesory.html"
+    },
+    {
+        "Id": "1215",
+        "FormattedName": "sluchawki",
+        "ParentGroupId": "12",
+        "NamePlural": "Słuchawki",
+        "CategoryUrl": "https://www.x-kom.pl/g-12/c/1215-sluchawki.html"
+    },
+    {
+        "Id": "1117",
+        "FormattedName": "telewizory",
+        "ParentGroupId": "8",
+        "NamePlural": "Telewizory",
+        "CategoryUrl": "https://www.x-kom.pl/g-8/c/1117-telewizory.html"
+    },
+    {
+        "Id": "3467",
+        "FormattedName": "zdrowie-i-ergonomia",
+        "ParentGroupId": "64",
+        "NamePlural": "Zdrowie i ergonomia",
+        "CategoryUrl": "https://www.x-kom.pl/g-64/c/3467-zdrowie-i-ergonomia.html"
+    },
+    {
+        "Id": "156",
+        "FormattedName": "aparaty-fotograficzne",
+        "ParentGroupId": "64",
+        "NamePlural": "Aparaty fotograficzne",
+        "CategoryUrl": "https://www.x-kom.pl/g-64/c/156-aparaty-fotograficzne.html"
+    },
+    {
+        "Id": "31",
+        "FormattedName": "myszki",
+        "ParentGroupId": "12",
+        "NamePlural": "Myszki",
+        "CategoryUrl": "https://www.x-kom.pl/g-12/c/31-myszki.html"
+    },
+    {
+        "Id": "3442",
+        "FormattedName": "soundbary",
+        "ParentGroupId": "8",
+        "NamePlural": "Soundbary",
+        "CategoryUrl": "https://www.x-kom.pl/g-8/c/3442-soundbary.html"
+    },
+    {
+        "Id": "421",
+        "FormattedName": "urzadzenia-sieciowe",
+        "ParentGroupId": "6",
+        "NamePlural": "Urządzenia sieciowe",
+        "CategoryUrl": "https://www.x-kom.pl/g-6/c/421-urzadzenia-sieciowe.html"
+    },
+    {
+        "Id": "3028",
+        "FormattedName": "akcesoria-samochodowe",
+        "ParentGroupId": "64",
+        "NamePlural": "Akcesoria samochodowe",
+        "CategoryUrl": "https://www.x-kom.pl/g-64/c/3028-akcesoria-samochodowe.html"
+    },
+    {
+        "Id": "1879",
+        "FormattedName": "kino-domowe",
+        "ParentGroupId": "8",
+        "NamePlural": "Kino domowe",
+        "CategoryUrl": "https://www.x-kom.pl/g-8/c/1879-kino-domowe.html"
+    },
+    {
+        "Id": "32",
+        "FormattedName": "klawiatury",
+        "ParentGroupId": "12",
+        "NamePlural": "Klawiatury",
+        "CategoryUrl": "https://www.x-kom.pl/g-12/c/32-klawiatury.html"
+    },
+    {
+        "Id": "31",
+        "FormattedName": "myszki",
+        "ParentGroupId": "6",
+        "NamePlural": "Myszki",
+        "CategoryUrl": "https://www.x-kom.pl/g-6/c/31-myszki.html"
+    },
+    {
+        "Id": "1033",
+        "FormattedName": "akcesoria-do-laptopow",
+        "ParentGroupId": "12",
+        "NamePlural": "Akcesoria do laptopów",
+        "CategoryUrl": "https://www.x-kom.pl/g-12/c/1033-akcesoria-do-laptopow.html"
+    },
+    {
+        "Id": "3084",
+        "FormattedName": "monitoring",
+        "ParentGroupId": "64",
+        "NamePlural": "Monitoring",
+        "CategoryUrl": "https://www.x-kom.pl/g-64/c/3084-monitoring.html"
+    },
+    {
+        "Id": "2380",
+        "FormattedName": "myszki-i-klawiatury-dla-graczy",
+        "ParentGroupId": "7",
+        "NamePlural": "Myszki i klawiatury dla graczy",
+        "CategoryUrl": "https://www.x-kom.pl/g-7/c/2380-myszki-i-klawiatury-dla-graczy.html"
+    },
+    {
+        "Id": "375",
+        "FormattedName": "projektory-i-ekrany",
+        "ParentGroupId": "8",
+        "NamePlural": "Projektory i ekrany",
+        "CategoryUrl": "https://www.x-kom.pl/g-8/c/375-projektory-i-ekrany.html"
+    },
+    {
+        "Id": "161",
+        "FormattedName": "akcesoria-komputerowe",
+        "ParentGroupId": "12",
+        "NamePlural": "Akcesoria komputerowe",
+        "CategoryUrl": "https://www.x-kom.pl/g-12/c/161-akcesoria-komputerowe.html"
+    },
+    {
+        "Id": "1163",
+        "FormattedName": "gry",
+        "ParentGroupId": "7",
+        "NamePlural": "Gry",
+        "CategoryUrl": "https://www.x-kom.pl/g-7/c/1163-gry.html"
+    },
+    {
+        "Id": "32",
+        "FormattedName": "klawiatury",
+        "ParentGroupId": "6",
+        "NamePlural": "Klawiatury",
+        "CategoryUrl": "https://www.x-kom.pl/g-6/c/32-klawiatury.html"
+    },
+    {
+        "Id": "1936",
+        "FormattedName": "obiektywy",
+        "ParentGroupId": "64",
+        "NamePlural": "Obiektywy",
+        "CategoryUrl": "https://www.x-kom.pl/g-64/c/1936-obiektywy.html"
+    },
+    {
+        "Id": "14",
+        "FormattedName": "plyty-glowne",
+        "ParentGroupId": "5",
+        "NamePlural": "Płyty główne",
+        "CategoryUrl": "https://www.x-kom.pl/g-5/c/14-plyty-glowne.html"
+    },
+    {
+        "Id": "1592",
+        "FormattedName": "akcesoria-gsm",
+        "ParentGroupId": "12",
+        "NamePlural": "Akcesoria GSM",
+        "CategoryUrl": "https://www.x-kom.pl/g-12/c/1592-akcesoria-gsm.html"
+    },
+    {
+        "Id": "2636",
+        "FormattedName": "hi-fi-audio",
+        "ParentGroupId": "8",
+        "NamePlural": "Hi-Fi audio",
+        "CategoryUrl": "https://www.x-kom.pl/g-8/c/2636-hi-fi-audio.html"
+    },
+    {
+        "Id": "2158",
+        "FormattedName": "laptopy-2-w-1",
+        "ParentGroupId": "2",
+        "NamePlural": "Laptopy 2 w 1",
+        "CategoryUrl": "https://www.x-kom.pl/g-2/c/2158-laptopy-2-w-1.html"
+    },
+    {
+        "Id": "1215",
+        "FormattedName": "sluchawki",
+        "ParentGroupId": "6",
+        "NamePlural": "Słuchawki",
+        "CategoryUrl": "https://www.x-kom.pl/g-6/c/1215-sluchawki.html"
+    },
+    {
+        "Id": "3341",
+        "FormattedName": "dyski-zewnetrzne-ssd",
+        "ParentGroupId": "12",
+        "NamePlural": "Dyski zewnętrzne SSD",
+        "CategoryUrl": "https://www.x-kom.pl/g-12/c/3341-dyski-zewnetrzne-ssd.html"
+    },
+    {
+        "Id": "2948",
+        "FormattedName": "kolumny-glosnikowe",
+        "ParentGroupId": "8",
+        "NamePlural": "Kolumny głośnikowe",
+        "CategoryUrl": "https://www.x-kom.pl/g-8/c/2948-kolumny-glosnikowe.html"
+    },
+    {
+        "Id": "2652",
+        "FormattedName": "vr-virtual-reality",
+        "ParentGroupId": "7",
+        "NamePlural": "VR (Virtual Reality)",
+        "CategoryUrl": "https://www.x-kom.pl/g-7/c/2652-vr-virtual-reality.html"
+    },
+    {
+        "Id": "439",
+        "FormattedName": "dyski-zewnetrzne-hdd",
+        "ParentGroupId": "12",
+        "NamePlural": "Dyski zewnętrzne HDD",
+        "CategoryUrl": "https://www.x-kom.pl/g-12/c/439-dyski-zewnetrzne-hdd.html"
+    },
+    {
+        "Id": "33",
+        "FormattedName": "glosniki",
+        "ParentGroupId": "8",
+        "NamePlural": "Głośniki",
+        "CategoryUrl": "https://www.x-kom.pl/g-8/c/33-glosniki.html"
+    },
+    {
+        "Id": "2934",
+        "FormattedName": "urzadzenia-do-streamingu",
+        "ParentGroupId": "7",
+        "NamePlural": "Urządzenia do streamingu",
+        "CategoryUrl": "https://www.x-kom.pl/g-7/c/2934-urzadzenia-do-streamingu.html"
+    },
+    {
+        "Id": "583",
+        "FormattedName": "czytniki-kart-pamieci",
+        "ParentGroupId": "12",
+        "NamePlural": "Czytniki kart pamięci",
+        "CategoryUrl": "https://www.x-kom.pl/g-12/c/583-czytniki-kart-pamieci.html"
+    },
+    {
+        "Id": "3026",
+        "FormattedName": "kamery-sportowe-i-akcesoria",
+        "ParentGroupId": "64",
+        "NamePlural": "Kamery sportowe i akcesoria",
+        "CategoryUrl": "https://www.x-kom.pl/g-64/c/3026-kamery-sportowe-i-akcesoria.html"
+    },
+    {
+        "Id": "1215",
+        "FormattedName": "sluchawki",
+        "ParentGroupId": "8",
+        "NamePlural": "Słuchawki",
+        "CategoryUrl": "https://www.x-kom.pl/g-8/c/1215-sluchawki.html"
+    },
+    {
+        "Id": "3093",
+        "FormattedName": "mikrofony-i-akcesoria",
+        "ParentGroupId": "8",
+        "NamePlural": "Mikrofony i akcesoria",
+        "CategoryUrl": "https://www.x-kom.pl/g-8/c/3093-mikrofony-i-akcesoria.html"
+    },
+    {
+        "Id": "388",
+        "FormattedName": "obudowy-komputerowe",
+        "ParentGroupId": "5",
+        "NamePlural": "Obudowy komputerowe",
+        "CategoryUrl": "https://www.x-kom.pl/g-5/c/388-obudowy-komputerowe.html"
+    },
+    {
+        "Id": "3524",
+        "FormattedName": "laptopy-biznesowe",
+        "ParentGroupId": "2",
+        "NamePlural": "Laptopy biznesowe",
+        "CategoryUrl": "https://www.x-kom.pl/g-2/c/3524-laptopy-biznesowe.html"
+    },
+    {
+        "Id": "1425",
+        "FormattedName": "odtwarzacze-multimedialne",
+        "ParentGroupId": "8",
+        "NamePlural": "Odtwarzacze multimedialne",
+        "CategoryUrl": "https://www.x-kom.pl/g-8/c/1425-odtwarzacze-multimedialne.html"
+    },
+    {
+        "Id": "28",
+        "FormattedName": "pamieci-ram",
+        "ParentGroupId": "5",
+        "NamePlural": "Pamięci RAM",
+        "CategoryUrl": "https://www.x-kom.pl/g-5/c/28-pamieci-ram.html"
+    },
+    {
+        "Id": "175",
+        "FormattedName": "komputery-stacjonarne",
+        "ParentGroupId": "2",
+        "NamePlural": "Komputery stacjonarne",
+        "CategoryUrl": "https://www.x-kom.pl/g-2/c/175-komputery-stacjonarne.html"
+    },
+    {
+        "Id": "1885",
+        "FormattedName": "przenosny-sprzet-audio",
+        "ParentGroupId": "8",
+        "NamePlural": "Przenośny sprzęt audio",
+        "CategoryUrl": "https://www.x-kom.pl/g-8/c/1885-przenosny-sprzet-audio.html"
+    },
+    {
+        "Id": "3041",
+        "FormattedName": "komputery-g4m3r",
+        "ParentGroupId": "2",
+        "NamePlural": "Komputery G4M3R",
+        "CategoryUrl": "https://www.x-kom.pl/g-2/c/3041-komputery-g4m3r.html"
+    },
+    {
+        "Id": "3466",
+        "FormattedName": "meble-gamingowe",
+        "ParentGroupId": "7",
+        "NamePlural": "Meble gamingowe",
+        "CategoryUrl": "https://www.x-kom.pl/g-7/c/3466-meble-gamingowe.html"
+    },
+    {
+        "Id": "2371",
+        "FormattedName": "monitory-dla-graczy",
+        "ParentGroupId": "7",
+        "NamePlural": "Monitory dla graczy",
+        "CategoryUrl": "https://www.x-kom.pl/g-7/c/2371-monitory-dla-graczy.html"
+    },
+    {
+        "Id": "1663",
+        "FormattedName": "tablety",
+        "ParentGroupId": "2",
+        "NamePlural": "Tablety",
+        "CategoryUrl": "https://www.x-kom.pl/g-2/c/1663-tablety.html"
+    },
+    {
+        "Id": "2493",
+        "FormattedName": "zasilacze-komputerowe",
+        "ParentGroupId": "5",
+        "NamePlural": "Zasilacze komputerowe",
+        "CategoryUrl": "https://www.x-kom.pl/g-5/c/2493-zasilacze-komputerowe.html"
+    },
+    {
+        "Id": "2599",
+        "FormattedName": "chlodzenia-komputerowe",
+        "ParentGroupId": "5",
+        "NamePlural": "Chłodzenia komputerowe",
+        "CategoryUrl": "https://www.x-kom.pl/g-5/c/2599-chlodzenia-komputerowe.html"
+    },
+    {
+        "Id": "3030",
+        "FormattedName": "gadzety-dla-graczy",
+        "ParentGroupId": "7",
+        "NamePlural": "Gadżety dla graczy",
+        "CategoryUrl": "https://www.x-kom.pl/g-7/c/3030-gadzety-dla-graczy.html"
+    },
+    {
+        "Id": "33",
+        "FormattedName": "glosniki",
+        "ParentGroupId": "6",
+        "NamePlural": "Głośniki",
+        "CategoryUrl": "https://www.x-kom.pl/g-6/c/33-glosniki.html"
+    },
+    {
+        "Id": "2381",
+        "FormattedName": "audio-dla-graczy",
+        "ParentGroupId": "7",
+        "NamePlural": "Audio dla graczy",
+        "CategoryUrl": "https://www.x-kom.pl/g-7/c/2381-audio-dla-graczy.html"
+    },
+    {
+        "Id": "3093",
+        "FormattedName": "mikrofony-i-akcesoria",
+        "ParentGroupId": "6",
+        "NamePlural": "Mikrofony i akcesoria",
+        "CategoryUrl": "https://www.x-kom.pl/g-6/c/3093-mikrofony-i-akcesoria.html"
+    },
+    {
+        "Id": "397",
+        "FormattedName": "modding-pc",
+        "ParentGroupId": "5",
+        "NamePlural": "Modding PC",
+        "CategoryUrl": "https://www.x-kom.pl/g-5/c/397-modding-pc.html"
+    },
+    {
+        "Id": "3309",
+        "FormattedName": "serwery-i-storage",
+        "ParentGroupId": "2",
+        "NamePlural": "Serwery i storage",
+        "CategoryUrl": "https://www.x-kom.pl/g-2/c/3309-serwery-i-storage.html"
+    },
+    {
+        "Id": "7",
+        "FormattedName": "karty-dzwiekowe",
+        "ParentGroupId": "5",
+        "NamePlural": "Karty dźwiękowe",
+        "CategoryUrl": "https://www.x-kom.pl/g-5/c/7-karty-dzwiekowe.html"
+    },
+    {
+        "Id": "49",
+        "FormattedName": "programy",
+        "ParentGroupId": "2",
+        "NamePlural": "Programy",
+        "CategoryUrl": "https://www.x-kom.pl/g-2/c/49-programy.html"
+    },
+    {
+        "Id": "2383",
+        "FormattedName": "tablety-dla-graczy",
+        "ParentGroupId": "7",
+        "NamePlural": "Tablety dla graczy",
+        "CategoryUrl": "https://www.x-kom.pl/g-7/c/2383-tablety-dla-graczy.html"
+    },
+    {
+        "Id": "2665",
+        "FormattedName": "karty-przechwytujace-wideo",
+        "ParentGroupId": "5",
+        "NamePlural": "Karty przechwytujące wideo",
+        "CategoryUrl": "https://www.x-kom.pl/g-5/c/2665-karty-przechwytujace-wideo.html"
+    },
+    {
+        "Id": "392",
+        "FormattedName": "kontrolery-do-gier",
+        "ParentGroupId": "7",
+        "NamePlural": "Kontrolery do gier",
+        "CategoryUrl": "https://www.x-kom.pl/g-7/c/392-kontrolery-do-gier.html"
+    },
+    {
+        "Id": "161",
+        "FormattedName": "akcesoria-komputerowe",
+        "ParentGroupId": "2",
+        "NamePlural": "Akcesoria komputerowe",
+        "CategoryUrl": "https://www.x-kom.pl/g-2/c/161-akcesoria-komputerowe.html"
+    },
+    {
+        "Id": "7",
+        "FormattedName": "karty-dzwiekowe",
+        "ParentGroupId": "12",
+        "NamePlural": "Karty dźwiękowe",
+        "CategoryUrl": "https://www.x-kom.pl/g-12/c/7-karty-dzwiekowe.html"
+    },
+    {
+        "Id": "455",
+        "FormattedName": "karty-sieciowe",
+        "ParentGroupId": "5",
+        "NamePlural": "Karty sieciowe",
+        "CategoryUrl": "https://www.x-kom.pl/g-5/c/455-karty-sieciowe.html"
+    },
+    {
+        "Id": "1033",
+        "FormattedName": "akcesoria-do-laptopow",
+        "ParentGroupId": "2",
+        "NamePlural": "Akcesoria do laptopów",
+        "CategoryUrl": "https://www.x-kom.pl/g-2/c/1033-akcesoria-do-laptopow.html"
+    },
+    {
+        "Id": "408",
+        "FormattedName": "akcesoria-foto-video",
+        "ParentGroupId": "64",
+        "NamePlural": "Akcesoria foto-video",
+        "CategoryUrl": "https://www.x-kom.pl/g-64/c/408-akcesoria-foto-video.html"
+    },
+    {
+        "Id": "2519",
+        "FormattedName": "czytniki-ebook",
+        "ParentGroupId": "4",
+        "NamePlural": "Czytniki ebook",
+        "CategoryUrl": "https://www.x-kom.pl/g-4/c/2519-czytniki-ebook.html"
+    },
+    {
+        "Id": "1461",
+        "FormattedName": "napedy-optyczne",
+        "ParentGroupId": "5",
+        "NamePlural": "Napędy optyczne",
+        "CategoryUrl": "https://www.x-kom.pl/g-5/c/1461-napedy-optyczne.html"
+    },
+    {
+        "Id": "1937",
+        "FormattedName": "lampy-blyskowe-i-studyjne",
+        "ParentGroupId": "64",
+        "NamePlural": "Lampy błyskowe i studyjne",
+        "CategoryUrl": "https://www.x-kom.pl/g-64/c/1937-lampy-blyskowe-i-studyjne.html"
+    },
+    {
+        "Id": "2887",
+        "FormattedName": "podzespoly-serwerowe",
+        "ParentGroupId": "5",
+        "NamePlural": "Podzespoły serwerowe",
+        "CategoryUrl": "https://www.x-kom.pl/g-5/c/2887-podzespoly-serwerowe.html"
+    },
+    {
+        "Id": "39",
+        "FormattedName": "srodki-czyszczace",
+        "ParentGroupId": "12",
+        "NamePlural": "Środki czyszczące",
+        "CategoryUrl": "https://www.x-kom.pl/g-12/c/39-srodki-czyszczace.html"
+    },
+    {
+        "Id": "172",
+        "FormattedName": "torby-i-etui",
+        "ParentGroupId": "2",
+        "NamePlural": "Torby i etui",
+        "CategoryUrl": "https://www.x-kom.pl/g-2/c/172-torby-i-etui.html"
+    },
+    {
+        "Id": "1173",
+        "FormattedName": "stacje-dokujace-do-laptopow",
+        "ParentGroupId": "2",
+        "NamePlural": "Stacje dokujące do laptopów",
+        "CategoryUrl": "https://www.x-kom.pl/g-2/c/1173-stacje-dokujace-do-laptopow.html"
+    },
+    {
+        "Id": "1506",
+        "FormattedName": "statywy-i-glowice",
+        "ParentGroupId": "64",
+        "NamePlural": "Statywy i głowice",
+        "CategoryUrl": "https://www.x-kom.pl/g-64/c/1506-statywy-i-glowice.html"
+    },
+    {
+        "Id": "33",
+        "FormattedName": "glosniki",
+        "ParentGroupId": "12",
+        "NamePlural": "Głośniki",
+        "CategoryUrl": "https://www.x-kom.pl/g-12/c/33-glosniki.html"
+    },
+    {
+        "Id": "2581",
+        "FormattedName": "stabilizatory-obrazu",
+        "ParentGroupId": "64",
+        "NamePlural": "Stabilizatory obrazu",
+        "CategoryUrl": "https://www.x-kom.pl/g-64/c/2581-stabilizatory-obrazu.html"
+    },
+    {
+        "Id": "2488",
+        "FormattedName": "wyposazenie-studia",
+        "ParentGroupId": "64",
+        "NamePlural": "Wyposażenie studia",
+        "CategoryUrl": "https://www.x-kom.pl/g-64/c/2488-wyposazenie-studia.html"
+    },
+    {
+        "Id": "2587",
+        "FormattedName": "pojazdy-elektryczne",
+        "ParentGroupId": "12",
+        "NamePlural": "Pojazdy elektryczne",
+        "CategoryUrl": "https://www.x-kom.pl/g-12/c/2587-pojazdy-elektryczne.html"
+    },
+    {
+        "Id": "1930",
+        "FormattedName": "torby-i-pokrowce-na-aparat",
+        "ParentGroupId": "64",
+        "NamePlural": "Torby i pokrowce na aparat",
+        "CategoryUrl": "https://www.x-kom.pl/g-64/c/1930-torby-i-pokrowce-na-aparat.html"
+    },
+    {
+        "Id": "3117",
+        "FormattedName": "akcesoria-rowerowe",
+        "ParentGroupId": "64",
+        "NamePlural": "Akcesoria rowerowe",
+        "CategoryUrl": "https://www.x-kom.pl/g-64/c/3117-akcesoria-rowerowe.html"
+    },
+    {
+        "Id": "2745",
+        "FormattedName": "podkladki-do-komputera",
+        "ParentGroupId": "12",
+        "NamePlural": "Podkładki do komputera",
+        "CategoryUrl": "https://www.x-kom.pl/g-12/c/2745-podkladki-do-komputera.html"
+    },
+    {
+        "Id": "3173",
+        "FormattedName": "akcesoria-motocyklowe",
+        "ParentGroupId": "64",
+        "NamePlural": "Akcesoria motocyklowe",
+        "CategoryUrl": "https://www.x-kom.pl/g-64/c/3173-akcesoria-motocyklowe.html"
+    },
+    {
+        "Id": "48",
+        "FormattedName": "listwy-zasilajace",
+        "ParentGroupId": "12",
+        "NamePlural": "Listwy zasilające",
+        "CategoryUrl": "https://www.x-kom.pl/g-12/c/48-listwy-zasilajace.html"
+    },
+    {
+        "Id": "396",
+        "FormattedName": "akcesoria-do-dyskow",
+        "ParentGroupId": "12",
+        "NamePlural": "Akcesoria do dysków",
+        "CategoryUrl": "https://www.x-kom.pl/g-12/c/396-akcesoria-do-dyskow.html"
+    },
+    {
+        "Id": "2567",
+        "FormattedName": "urzadzenia-biurowe",
+        "ParentGroupId": "12",
+        "NamePlural": "Urządzenia biurowe",
+        "CategoryUrl": "https://www.x-kom.pl/g-12/c/2567-urzadzenia-biurowe.html"
+    },
+    {
+        "Id": "396",
+        "FormattedName": "akcesoria-do-dyskow",
+        "ParentGroupId": "5",
+        "NamePlural": "Akcesoria do dysków",
+        "CategoryUrl": "https://www.x-kom.pl/g-5/c/396-akcesoria-do-dyskow.html"
+    },
+    {
+        "Id": "297",
+        "FormattedName": "tablety-graficzne",
+        "ParentGroupId": "6",
+        "NamePlural": "Tablety graficzne",
+        "CategoryUrl": "https://www.x-kom.pl/g-6/c/297-tablety-graficzne.html"
+    },
+    {
+        "Id": "2332",
+        "FormattedName": "kamery-cyfrowe",
+        "ParentGroupId": "64",
+        "NamePlural": "Kamery cyfrowe",
+        "CategoryUrl": "https://www.x-kom.pl/g-64/c/2332-kamery-cyfrowe.html"
+    },
+    {
+        "Id": "375",
+        "FormattedName": "projektory-i-ekrany",
+        "ParentGroupId": "6",
+        "NamePlural": "Projektory i ekrany",
+        "CategoryUrl": "https://www.x-kom.pl/g-6/c/375-projektory-i-ekrany.html"
+    },
+    {
+        "Id": "3300",
+        "FormattedName": "fotele-do-biura",
+        "ParentGroupId": "64",
+        "NamePlural": "Fotele do biura",
+        "CategoryUrl": "https://www.x-kom.pl/g-64/c/3300-fotele-do-biura.html"
+    },
+    {
+        "Id": "2745",
+        "FormattedName": "podkladki-do-komputera",
+        "ParentGroupId": "6",
+        "NamePlural": "Podkładki do komputera",
+        "CategoryUrl": "https://www.x-kom.pl/g-6/c/2745-podkladki-do-komputera.html"
+    },
+    {
+        "Id": "3443",
+        "FormattedName": "uslugi-dodatkowe",
+        "ParentGroupId": "12",
+        "NamePlural": "Usługi dodatkowe",
+        "CategoryUrl": "https://www.x-kom.pl/g-12/c/3443-uslugi-dodatkowe.html"
+    },
+    {
+        "Id": "2537",
+        "FormattedName": "zasilacze-ups-i-stabilizatory",
+        "ParentGroupId": "6",
+        "NamePlural": "Zasilacze UPS i stabilizatory",
+        "CategoryUrl": "https://www.x-kom.pl/g-6/c/2537-zasilacze-ups-i-stabilizatory.html"
+    },
+    {
+        "Id": "2987",
+        "FormattedName": "gadzety",
+        "ParentGroupId": "12",
+        "NamePlural": "Gadżety",
+        "CategoryUrl": "https://www.x-kom.pl/g-12/c/2987-gadzety.html"
+    },
+    {
+        "Id": "2089",
+        "FormattedName": "materialy-eksploatacyjne",
+        "ParentGroupId": "6",
+        "NamePlural": "Materiały eksploatacyjne",
+        "CategoryUrl": "https://www.x-kom.pl/g-6/c/2089-materialy-eksploatacyjne.html"
+    },
+    {
+        "Id": "2737",
+        "FormattedName": "narzedzia-serwisowe-i-sieciowe",
+        "ParentGroupId": "12",
+        "NamePlural": "Narzędzia serwisowe i sieciowe",
+        "CategoryUrl": "https://www.x-kom.pl/g-12/c/2737-narzedzia-serwisowe-i-sieciowe.html"
+    },
+    {
+        "Id": "2287",
+        "FormattedName": "akcesoria-do-tabletow",
+        "ParentGroupId": "12",
+        "NamePlural": "Akcesoria do tabletów",
+        "CategoryUrl": "https://www.x-kom.pl/g-12/c/2287-akcesoria-do-tabletow.html"
+    },
+    {
+        "Id": "2385",
+        "FormattedName": "plecaki-dla-graczy",
+        "ParentGroupId": "7",
+        "NamePlural": "Plecaki dla graczy",
+        "CategoryUrl": "https://www.x-kom.pl/g-7/c/2385-plecaki-dla-graczy.html"
+    },
+    {
+        "Id": "408",
+        "FormattedName": "akcesoria-foto-video",
+        "ParentGroupId": "12",
+        "NamePlural": "Akcesoria foto-video",
+        "CategoryUrl": "https://www.x-kom.pl/g-12/c/408-akcesoria-foto-video.html"
+    },
+    {
+        "Id": "2086",
+        "FormattedName": "akcesoria-do-monitorow",
+        "ParentGroupId": "12",
+        "NamePlural": "Akcesoria do monitorów",
+        "CategoryUrl": "https://www.x-kom.pl/g-12/c/2086-akcesoria-do-monitorow.html"
+    },
+    {
+        "Id": "2528",
+        "FormattedName": "akcesoria-do-telewizorow",
+        "ParentGroupId": "12",
+        "NamePlural": "Akcesoria do telewizorów",
+        "CategoryUrl": "https://www.x-kom.pl/g-12/c/2528-akcesoria-do-telewizorow.html"
+    },
+    {
+        "Id": "3356",
+        "FormattedName": "karty-pamieci-do-konsol",
+        "ParentGroupId": "7",
+        "NamePlural": "Karty pamięci do konsol",
+        "CategoryUrl": "https://www.x-kom.pl/g-7/c/3356-karty-pamieci-do-konsol.html"
+    },
+    {
+        "Id": "2518",
+        "FormattedName": "akcesoria-do-konsol",
+        "ParentGroupId": "12",
+        "NamePlural": "Akcesoria do konsol",
+        "CategoryUrl": "https://www.x-kom.pl/g-12/c/2518-akcesoria-do-konsol.html"
+    },
+    {
+        "Id": "2438",
+        "FormattedName": "fotele-dla-graczy",
+        "ParentGroupId": "7",
+        "NamePlural": "Fotele dla graczy",
+        "CategoryUrl": "https://www.x-kom.pl/g-7/c/2438-fotele-dla-graczy.html"
+    },
+    {
+        "Id": "2671",
+        "FormattedName": "akcesoria-do-sluchawek",
+        "ParentGroupId": "12",
+        "NamePlural": "Akcesoria do słuchawek",
+        "CategoryUrl": "https://www.x-kom.pl/g-12/c/2671-akcesoria-do-sluchawek.html"
+    },
+    {
+        "Id": "7",
+        "FormattedName": "karty-dzwiekowe",
+        "ParentGroupId": "8",
+        "NamePlural": "Karty dźwiękowe",
+        "CategoryUrl": "https://www.x-kom.pl/g-8/c/7-karty-dzwiekowe.html"
+    },
+    {
+        "Id": "23",
+        "FormattedName": "skanery",
+        "ParentGroupId": "6",
+        "NamePlural": "Skanery",
+        "CategoryUrl": "https://www.x-kom.pl/g-6/c/23-skanery.html"
+    },
+    {
+        "Id": "109",
+        "FormattedName": "kamery",
+        "ParentGroupId": "6",
+        "NamePlural": "Kamery",
+        "CategoryUrl": "https://www.x-kom.pl/g-6/c/109-kamery.html"
+    },
+    {
+        "Id": "2779",
+        "FormattedName": "akcesoria-do-myszek",
+        "ParentGroupId": "12",
+        "NamePlural": "Akcesoria do myszek",
+        "CategoryUrl": "https://www.x-kom.pl/g-12/c/2779-akcesoria-do-myszek.html"
+    },
+    {
+        "Id": "3375",
+        "FormattedName": "akcesoria-do-klawiatur",
+        "ParentGroupId": "12",
+        "NamePlural": "Akcesoria do klawiatur",
+        "CategoryUrl": "https://www.x-kom.pl/g-12/c/3375-akcesoria-do-klawiatur.html"
+    },
+    {
+        "Id": "3624",
+        "FormattedName": "sprzet-do-wideokonferencji",
+        "ParentGroupId": "6",
+        "NamePlural": "Sprzęt do wideokonferencji",
+        "CategoryUrl": "https://www.x-kom.pl/g-6/c/3624-sprzet-do-wideokonferencji.html"
+    },
+    {
+        "Id": "2345",
+        "FormattedName": "akcesoria-do-kontrolerow",
+        "ParentGroupId": "12",
+        "NamePlural": "Akcesoria do kontrolerów",
+        "CategoryUrl": "https://www.x-kom.pl/g-12/c/2345-akcesoria-do-kontrolerow.html"
+    },
+    {
+        "Id": "2642",
+        "FormattedName": "power-audio",
+        "ParentGroupId": "8",
+        "NamePlural": "Power Audio",
+        "CategoryUrl": "https://www.x-kom.pl/g-8/c/2642-power-audio.html"
+    },
+    {
+        "Id": "2567",
+        "FormattedName": "urzadzenia-biurowe",
+        "ParentGroupId": "6",
+        "NamePlural": "Urządzenia biurowe",
+        "CategoryUrl": "https://www.x-kom.pl/g-6/c/2567-urzadzenia-biurowe.html"
+    },
+    {
+        "Id": "2528",
+        "FormattedName": "akcesoria-do-telewizorow",
+        "ParentGroupId": "8",
+        "NamePlural": "Akcesoria do telewizorów",
+        "CategoryUrl": "https://www.x-kom.pl/g-8/c/2528-akcesoria-do-telewizorow.html"
+    },
+    {
+        "Id": "2671",
+        "FormattedName": "akcesoria-do-sluchawek",
+        "ParentGroupId": "8",
+        "NamePlural": "Akcesoria do słuchawek",
+        "CategoryUrl": "https://www.x-kom.pl/g-8/c/2671-akcesoria-do-sluchawek.html"
+    },
+    {
+        "Id": "1387",
+        "FormattedName": "piloty-i-manipulatory",
+        "ParentGroupId": "6",
+        "NamePlural": "Piloty i manipulatory",
+        "CategoryUrl": "https://www.x-kom.pl/g-6/c/1387-piloty-i-manipulatory.html"
+    },
+    {
+        "Id": "2086",
+        "FormattedName": "akcesoria-do-monitorow",
+        "ParentGroupId": "6",
+        "NamePlural": "Akcesoria do monitorów",
+        "CategoryUrl": "https://www.x-kom.pl/g-6/c/2086-akcesoria-do-monitorow.html"
+    },
+    {
+        "Id": "3523",
+        "FormattedName": "akcesoria-do-tabletow-graficznych",
+        "ParentGroupId": "12",
+        "NamePlural": "Akcesoria do tabletów graficznych",
+        "CategoryUrl": "https://www.x-kom.pl/g-12/c/3523-akcesoria-do-tabletow-graficznych.html"
+    },
+    {
+        "Id": "133",
+        "FormattedName": "pamieci-flash",
+        "ParentGroupId": "12",
+        "NamePlural": "Pamięci flash",
+        "CategoryUrl": "https://www.x-kom.pl/g-12/c/133-pamieci-flash.html"
+    },
+    {
+        "Id": "3523",
+        "FormattedName": "akcesoria-do-tabletow-graficznych",
+        "ParentGroupId": "6",
+        "NamePlural": "Akcesoria do tabletów graficznych",
+        "CategoryUrl": "https://www.x-kom.pl/g-6/c/3523-akcesoria-do-tabletow-graficznych.html"
+    },
+    {
+        "Id": "3464",
+        "FormattedName": "ochrona-na-telefon",
+        "ParentGroupId": "4",
+        "NamePlural": "Ochrona na telefon",
+        "CategoryUrl": "https://www.x-kom.pl/g-4/c/3464-ochrona-na-telefon.html"
+    },
+    {
+        "Id": "3465",
+        "FormattedName": "ladowarki-i-powerbanki",
+        "ParentGroupId": "4",
+        "NamePlural": "Ładowarki i powerbanki",
+        "CategoryUrl": "https://www.x-kom.pl/g-4/c/3465-ladowarki-i-powerbanki.html"
+    },
+    {
+        "Id": "979",
+        "FormattedName": "karty-pamieci-microsd",
+        "ParentGroupId": "4",
+        "NamePlural": "Karty pamięci microSD",
+        "CategoryUrl": "https://www.x-kom.pl/g-4/c/979-karty-pamieci-microsd.html"
+    },
+    {
+        "Id": "2748",
+        "FormattedName": "sluchawki-true-wireless",
+        "ParentGroupId": "4",
+        "NamePlural": "Słuchawki True Wireless",
+        "CategoryUrl": "https://www.x-kom.pl/g-4/c/2748-sluchawki-true-wireless.html"
+    },
+    {
+        "Id": "1592",
+        "FormattedName": "akcesoria-gsm",
+        "ParentGroupId": "4",
+        "NamePlural": "Akcesoria GSM",
+        "CategoryUrl": "https://www.x-kom.pl/g-4/c/1592-akcesoria-gsm.html"
+    },
+    {
+        "Id": "2287",
+        "FormattedName": "akcesoria-do-tabletow",
+        "ParentGroupId": "4",
+        "NamePlural": "Akcesoria do tabletów",
+        "CategoryUrl": "https://www.x-kom.pl/g-4/c/2287-akcesoria-do-tabletow.html"
+    },
+    {
+        "Id": "133",
+        "FormattedName": "pamieci-flash",
+        "ParentGroupId": "4",
+        "NamePlural": "Pamięci flash",
+        "CategoryUrl": "https://www.x-kom.pl/g-4/c/133-pamieci-flash.html"
+    },
+    {
+        "Id": "2384",
+        "FormattedName": "konsole",
+        "ParentGroupId": "64",
+        "NamePlural": "Konsole",
+        "CategoryUrl": "https://www.x-kom.pl/g-64/c/2384-konsole.html"
+    },
+    {
+        "Id": "2652",
+        "FormattedName": "vr-virtual-reality",
+        "ParentGroupId": "64",
+        "NamePlural": "VR (Virtual Reality)",
+        "CategoryUrl": "https://www.x-kom.pl/g-64/c/2652-vr-virtual-reality.html"
+    },
+    {
+        "Id": "1163",
+        "FormattedName": "gry",
+        "ParentGroupId": "64",
+        "NamePlural": "Gry",
+        "CategoryUrl": "https://www.x-kom.pl/g-64/c/1163-gry.html"
+    },
+    {
+        "Id": "3030",
+        "FormattedName": "gadzety-dla-graczy",
+        "ParentGroupId": "64",
+        "NamePlural": "Gadżety dla graczy",
+        "CategoryUrl": "https://www.x-kom.pl/g-64/c/3030-gadzety-dla-graczy.html"
+    },
+    {
+        "Id": "3451",
+        "FormattedName": "akcesoria-do-urzadzen-smart",
+        "ParentGroupId": "64",
+        "NamePlural": "Akcesoria do urządzeń smart",
+        "CategoryUrl": "https://www.x-kom.pl/g-64/c/3451-akcesoria-do-urzadzen-smart.html"
+    },
+    {
+        "Id": "3478",
+        "FormattedName": "sprzet-dj",
+        "ParentGroupId": "8",
+        "NamePlural": "Sprzęt DJ",
+        "CategoryUrl": "https://www.x-kom.pl/g-8/c/3478-sprzet-dj.html"
+    },
+    {
+        "Id": "1876",
+        "FormattedName": "tunery-do-tv",
+        "ParentGroupId": "8",
+        "NamePlural": "Tunery do TV",
+        "CategoryUrl": "https://www.x-kom.pl/g-8/c/1876-tunery-do-tv.html"
+    },
+    {
+        "Id": "1877",
+        "FormattedName": "anteny-dvb-t",
+        "ParentGroupId": "8",
+        "NamePlural": "Anteny DVB-T",
+        "CategoryUrl": "https://www.x-kom.pl/g-8/c/1877-anteny-dvb-t.html"
+    },
+    {
+        "Id": "3590",
+        "FormattedName": "symulatory-lotow",
+        "ParentGroupId": "7",
+        "NamePlural": "Symulatory lotów",
+        "CategoryUrl": "https://www.x-kom.pl/g-7/c/3590-symulatory-lotow.html"
+    },
+    {
+        "Id": "3591",
+        "FormattedName": "symulatory-jazdy",
+        "ParentGroupId": "7",
+        "NamePlural": "Symulatory jazdy",
+        "CategoryUrl": "https://www.x-kom.pl/g-7/c/3591-symulatory-jazdy.html"
+    }
+]

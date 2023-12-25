@@ -32,7 +32,7 @@ public class AccountControllerImpl implements AccountController{
     }
 
     @Override
-    public ResponseEntity<String> resendVerificationEmail(EmailAddressDTO emailAddressDTO) {
+    public ResponseEntity<String> resendVerificationEmail(@RequestBody EmailAddressDTO emailAddressDTO) {
         return accountServiceImpl.resendVerificationEmail(emailAddressDTO);
     }
 }

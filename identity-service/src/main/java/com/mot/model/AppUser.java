@@ -1,6 +1,7 @@
 package com.mot.model;
 
 import com.mot.enums.UserRole;
+import com.mot.model.token.VerificationToken;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -10,12 +11,9 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.UUID;
+import java.util.*;
 
 @Entity
-@Builder
 public class AppUser implements UserDetails {
 
     @Id
@@ -49,6 +47,9 @@ public class AppUser implements UserDetails {
     @NotNull
     @Column
     private Boolean isLocked = false;
+
+    @OneToMany(mappedBy = "appUser", cascade = CascadeType.ALL)
+    private Set<VerificationToken> verificationTokens = new HashSet<>();
 
     public AppUser(){
 
@@ -174,4 +175,9 @@ public class AppUser implements UserDetails {
     public void setLocked(Boolean locked) {
         isLocked = locked;
     }
+
+    public Set<VerificationToken> getVerificationTokens() {
+        return verificationTokens;
+    }
+
 }

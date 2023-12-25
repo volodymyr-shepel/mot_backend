@@ -2,6 +2,7 @@ package com.mot.controller.auth;
 
 import com.mot.controller.auth.AuthController;
 import com.mot.dtos.AppUserDTO;
+import com.mot.dtos.CredentialsDTO;
 import com.mot.dtos.UserAuthenticationRequest;
 import com.mot.dtos.UserAuthenticationResponse;
 import com.mot.service.authentication.AuthenticationService;
@@ -31,5 +32,11 @@ public class AuthControllerImpl implements AuthController {
     public ResponseEntity<UserAuthenticationResponse> authenticate(@RequestBody UserAuthenticationRequest userAuthenticationRequest){
         return authenticationServiceImpl.authenticate(userAuthenticationRequest);
     }
+
+    @Override
+    public ResponseEntity<String> validateCredentials(@RequestBody CredentialsDTO credentialsDTO) {
+        return authenticationServiceImpl.validateCredentials(credentialsDTO);
+    }
+
 
 }

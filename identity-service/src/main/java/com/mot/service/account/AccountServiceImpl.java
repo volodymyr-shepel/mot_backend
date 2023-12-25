@@ -89,11 +89,9 @@ public class AccountServiceImpl implements AccountService{
         String providedEmail = emailAddressDTO.email();
 
         AppUser appUser = appUserRepository.getAppUserByEmailOrThrowUserNotFoundException(providedEmail);
-
+        verifyEmailForResend(appUser);
         verificationNotificationService.verifyEmailForResend(appUser);
-
         verificationNotificationService.sendVerificationNotification(appUser);
-
         return ResponseEntity.ok("Email was sent successfully");
 
     }
@@ -109,10 +107,27 @@ public class AccountServiceImpl implements AccountService{
     }
 
 
-
-
     private String encodePassword(String rawPassword) {
         return passwordEncoder.encode(rawPassword);
+    }
+
+    public void verifyEmailForResend(AppUser appUser){
+        checkIfUserIsEnabled(appUser);
+        checkIfVerificationEmailIsActive(appUser);
+    }
+
+
+    private void checkIfUserIsEnabled(AppUser appUser) {
+        if (appUser.isEnabled()) {
+            throw new IllegalStateException("Provided account is not activated");
+        }
+    }
+
+    private void checkIfVerificationEmailIsActive(AppUser appUser) {
+        if (verificationTokenRepository.existsByAppUserEmailAndExpiresAtAfterAndConfirmedAtIsNull(appUser.getUsername(), LocalDateTime.now())) {
+            throw new IllegalStateException("There is an active forget password email associated with the provided account." +
+                    " Use it or try again in 15 minutes");
+        }
     }
 
 

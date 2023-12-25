@@ -82,7 +82,7 @@ public class VerificationNotificationService extends NotificationService{
     }
 
     private void checkIfVerificationEmailIsActive(AppUser appUser) {
-        if (verificationTokenRepository.existsByAppUserEmailAndExpiresAtAfter(appUser.getUsername(), LocalDateTime.now())) {
+        if (verificationTokenRepository.existsByAppUserEmailAndExpiresAtAfterAndConfirmedAtIsNull(appUser.getUsername(), LocalDateTime.now())) {
             throw new IllegalStateException("There is an active verification email associated with the provided account." +
                     " Verify it or try again in 15 minutes");
         }

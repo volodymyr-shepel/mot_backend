@@ -17,5 +17,6 @@ public interface VerificationTokenRepository extends JpaRepository<VerificationT
                 .orElseThrow(() -> new InvalidTokenException("Verification token not found"));
     }
 
-    boolean existsByAppUserEmailAndExpiresAtAfter(String email, LocalDateTime now);
+    boolean existsByAppUserEmailAndExpiresAtAfterAndConfirmedAtIsNull(String email, LocalDateTime now);
+
 }
